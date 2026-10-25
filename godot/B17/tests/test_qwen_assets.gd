@@ -30,7 +30,11 @@ func check_assets() -> void:
     if not burst.visible or not burst.get_child(0).visible:
         fail("flak effect's children remain hidden")
         return
-    burst.advance(4.0)
+    # El rango real de duracion de una bocanada (visuals/flak_field.gd
+    # LIFETIME_MIN/MAX) es 8-12s; aqui se dispara sin duracion explicita, por
+    # lo que usa el valor por defecto de flak_burst.gd (10s). Avanzar mas
+    # alla de ese maximo real para comprobar la expiracion.
+    burst.advance(12.5)
     if burst.active or burst.visible:
         fail("flak does not expire")
         return

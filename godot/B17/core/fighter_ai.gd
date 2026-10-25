@@ -30,7 +30,9 @@ func offset_at(t: float) -> Vector3:
 
 func setup(start: Vector3, attack_side: float = 1.0, attack_profile: String = "FRONTAL", attack_lane: int = 0) -> void:
 	position = start
-	side = attack_side
+	# 0.0 no es un lado valido (el juego real siempre pasa -1.0 o 1.0); se
+	# trata como "sin lado explicito" y cae al lado derecho por defecto.
+	side = attack_side if attack_side != 0.0 else 1.0
 	profile = attack_profile
 	lane = attack_lane
 	state = "APPROACH"
