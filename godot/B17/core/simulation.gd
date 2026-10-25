@@ -11,6 +11,7 @@ var paused: bool = false
 var autopilot: bool = true
 var last_flak_burst: bool = false
 var flak_damage: float = 1.1
+var instrument_jitter_scale: float = 1.0
 var pitch_input: float = 0
 var turn_input: float = 0
 var throttle_input: float = 0
@@ -70,7 +71,7 @@ func step(delta: float):
     last_flak_burst = flak.step(delta, in_zone)
 
     if last_flak_burst:
-        damage.apply_instrument_damage(flak.last_burst_proximity)
+        damage.apply_instrument_damage(flak.last_burst_proximity, instrument_jitter_scale)
         if flak.bursts % 3 != 0:
             damage.apply_damage(flak_damage, flak.bursts % 4)
     damage.step_instruments(delta)

@@ -94,9 +94,16 @@ func run() -> void:
 	if restart_btn == null:
 		restart_btn = menu.find_child("*Restart*", true, false)
 	if restart_btn != null:
+		# Primera pulsacion arma la confirmacion (BAJO 1.3); no debe reiniciar todavia.
+		restart_btn.emit_signal("pressed")
+		if got["restart"]:
+			_fail("TEST FAIL: RestartButton reinicio sin confirmacion")
+			menu.queue_free()
+			return
+		# Segunda pulsacion confirma y reinicia.
 		restart_btn.emit_signal("pressed")
 		if not got["restart"]:
-			_fail("TEST FAIL: RestartButton no emitio restart_requested")
+			_fail("TEST FAIL: RestartButton no emitio restart_requested tras confirmar")
 			menu.queue_free()
 			return
 

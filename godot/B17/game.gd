@@ -3,6 +3,11 @@ extends Node3D
 const EngineAnchors = preload("res://visuals/engine_anchors.gd")
 const BombingAid = preload("res://core/bombing_aid.gd")
 const InputProfile = preload("res://core/input_profile.gd")
+const InputActions = preload("res://core/input_actions.gd")
+const SettingsManager = preload("res://core/settings_manager.gd")
+const SaveGame = preload("res://core/save_game.gd")
+const CombatConfig = preload("res://core/combat_config.gd")
+const OptionsMenu = preload("res://ui/options_menu.gd")
 const SfxBank = preload("res://audio/sfx_bank.gd")
 const OrbitCamera = preload("res://camera/orbit_camera_controller.gd")
 
@@ -45,10 +50,15 @@ var controls = preload("res://core/player_controls.gd").new()
 var gunsight_rect: TextureRect
 var bombsight_rect: TextureRect
 var settings_menu: Control
+var options_menu: Control
+var app_settings: Dictionary = {}
 var restart_confirm_timer: float = 0.0
 
 func _ready() -> void:
     get_tree().auto_accept_quit = false
+    InputActions.ensure_defaults()
+    app_settings = SettingsManager.load_all()
+    SettingsManager.apply_video(app_settings)
 
     var has_joy_a := false
     for ev in InputMap.action_get_events("ui_accept"):
@@ -87,6 +97,9 @@ func _ready() -> void:
     $Camera3D.far = 18000.0
     $HUD.label.visible = false
     overlay = preload("res://ui/mission_overlay.gd").new()
+    overlay.colorblind_mode = app_settings.colorblind_mode
+    overlay.subtitle_scale = app_settings.subtitle_scale
+    overlay.subtitle_opacity = app_settings.subtitle_opacity
     $HUD.add_child(overlay)
     $Scenery.visible = false
 
@@ -99,11 +112,17 @@ func _ready() -> void:
             joy_names.append(Input.get_joy_name(joy_id))
         active_prof = InputProfile.suggest_profile(joy_names)
     controls.profile = active_prof
+    _apply_settings_to_live_state()
+    if SaveGame.pending_continue:
+        SaveGame.pending_continue = false
+        SaveGame.load_into(sim)
 
     settings_menu = preload("res://ui/settings_menu.gd").new()
     settings_menu.name = "SettingsMenu"
     settings_menu.visible = false
     settings_menu.set_profile(active_prof)
+    settings_menu.music_enabled = app_settings.music_enabled
+    settings_menu.voice_enabled = app_settings.voice_enabled
     $HUD.add_child(settings_menu)
 
     settings_menu.resume_requested.connect(func():
@@ -121,7 +140,19 @@ func _ready() -> void:
     settings_menu.audio_changed.connect(func(kind: String, enabled: bool):
         if kind == "music": scene_audio.music_enabled = enabled
         elif kind == "voice": scene_audio.voice_enabled = enabled
+        SettingsManager.save_one(kind + "_enabled", enabled)
         update_presentation(0.0)
+    )
+    settings_menu.options_requested.connect(func():
+        _open_options_menu()
+    )
+    settings_menu.main_menu_requested.connect(func():
+        SaveGame.save_checkpoint(sim)
+        get_tree().change_scene_to_file("res://main_menu.tscn")
+    )
+    settings_menu.quit_requested.connect(func():
+        SaveGame.save_checkpoint(sim)
+        get_tree().quit()
     )
 
     gunsight_rect = TextureRect.new()
@@ -248,6 +279,9 @@ func _ready() -> void:
     scene_audio = preload("res://audio/scene_audio_director.gd").new()
     scene_audio.name = "SceneAudioDirector"
     add_child(scene_audio)
+    scene_audio.music_enabled = app_settings.music_enabled
+    scene_audio.voice_enabled = app_settings.voice_enabled
+    SettingsManager.apply_audio(app_settings)
     var effects: Array = [engine_audio, engine_damaged_audio, gun_audio, flak_audio, bomb_audio, stinger_audio]
     effects.append_array(sfx_pool)
     effects.append_array(flak_field.audio_players)
@@ -336,6 +370,52 @@ func restart_mission() -> void:
     sim.reset()
     reset_presentation()
 
+func _apply_settings_to_live_state() -> void:
+    controls.pitch_sensitivity = app_settings.pitch_sensitivity
+    controls.turn_sensitivity = app_settings.turn_sensitivity
+    controls.throttle_sensitivity = app_settings.throttle_sensitivity
+    controls.invert_pitch = app_settings.invert_pitch
+    controls.flight_assist = app_settings.flight_assist
+    _apply_difficulty(app_settings.difficulty)
+    sim.instrument_jitter_scale = 0.3 if app_settings.reduce_shake else 1.0
+
+func _apply_difficulty(difficulty: String) -> void:
+    sim.flak_damage = 1.1 * SettingsManager.difficulty_multiplier(difficulty)
+    sim.combat.max_effective_attackers = clampi(
+        CombatConfig.MAX_EFFECTIVE_ATTACKERS + SettingsManager.difficulty_attacker_bonus(difficulty), 2, 20)
+
+func _open_options_menu() -> void:
+    if options_menu != null and is_instance_valid(options_menu):
+        options_menu.visible = true
+        options_menu.move_to_front()
+        return
+    options_menu = OptionsMenu.new()
+    options_menu.name = "OptionsMenu"
+    $HUD.add_child(options_menu)
+    options_menu.setting_changed.connect(_on_setting_changed)
+    options_menu.closed.connect(func():
+        options_menu.visible = false
+        settings_menu.grab_initial_focus()
+    )
+
+func _on_setting_changed(key: String, value) -> void:
+    app_settings[key] = value
+    match key:
+        "pitch_sensitivity": controls.pitch_sensitivity = value
+        "turn_sensitivity": controls.turn_sensitivity = value
+        "throttle_sensitivity": controls.throttle_sensitivity = value
+        "invert_pitch": controls.invert_pitch = value
+        "flight_assist": controls.flight_assist = value
+        "difficulty": _apply_difficulty(value)
+        "reduce_shake": sim.instrument_jitter_scale = 0.3 if value else 1.0
+        "colorblind_mode": overlay.colorblind_mode = value
+        "subtitle_scale": overlay.subtitle_scale = value
+        "subtitle_opacity": overlay.subtitle_opacity = value
+        "profile":
+            controls.profile = value
+            settings_menu.set_profile(value)
+    update_presentation(0.0)
+
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventKey and event.pressed and not event.echo:
         if event.physical_keycode == KEY_F6 or event.keycode == KEY_F6:
@@ -346,10 +426,10 @@ func _unhandled_input(event: InputEvent) -> void:
             scene_audio.voice_enabled = not scene_audio.voice_enabled
             update_presentation(0.0)
             return
-        if event.physical_keycode == KEY_ESCAPE or event.physical_keycode == KEY_P or event.keycode == KEY_ESCAPE or event.keycode == KEY_P:
+        if event.is_action("b17_pausa"):
             set_pause(not sim.paused)
             return
-        elif event.physical_keycode == KEY_R or event.keycode == KEY_R:
+        elif event.is_action("b17_reiniciar"):
             if sim.mission.phase in ["COMPLETADA", "FALLIDA"]:
                 restart_confirm_timer = 0.0
                 restart_mission()
@@ -370,6 +450,8 @@ func _unhandled_input(event: InputEvent) -> void:
             restart_mission()
             return
 
+    if options_menu != null and options_menu.visible:
+        return
     if settings_menu != null and settings_menu.visible:
         if settings_menu.handle_input(event):
             return
@@ -684,6 +766,7 @@ func _notification(what: int) -> void:
     if what == NOTIFICATION_APPLICATION_FOCUS_OUT and orbit_camera != null:
         orbit_camera.reset_drag()
     if what == NOTIFICATION_WM_CLOSE_REQUEST:
+        SaveGame.save_checkpoint(sim)
         var all_audios := [engine_audio, engine_damaged_audio, gun_audio, flak_audio, bomb_audio, stinger_audio]
         all_audios.append_array(sfx_pool)
         for a in all_audios:

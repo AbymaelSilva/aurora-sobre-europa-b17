@@ -1,10 +1,13 @@
 extends RefCounted
 
+const InputActions = preload("res://core/input_actions.gd")
+
 var deadzone: float = 0.15
 var pitch_sensitivity: float = 1.0
 var turn_sensitivity: float = 1.0
 var throttle_sensitivity: float = 1.0
 var flight_assist: bool = false
+var invert_pitch: bool = false
 var station: String = "PILOTO"
 var aim: Vector2 = Vector2.ZERO
 var profile: String = "TECLADO_RATON"
@@ -68,6 +71,11 @@ func apply_deadzone(stick: Vector2, dz: float) -> Vector2:
 	return stick.normalized() * clampf(factor, 0.0, 1.0)
 
 func apply_flight_input(sim, pitch: float, turn: float, throttle: float) -> void:
+	if invert_pitch:
+		pitch = -pitch
+	if flight_assist:
+		pitch *= 0.65
+		turn *= 0.65
 	sim.pitch_input = clampf(pitch, -1.0, 1.0)
 	sim.turn_input = clampf(turn, -1.0, 1.0)
 	sim.throttle_input = clampf(throttle, -1.0, 1.0)
@@ -110,17 +118,18 @@ func fire(sim) -> bool:
 	return true
 
 func handle_event(event: InputEvent, sim) -> bool:
+	InputActions.ensure_defaults()
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.physical_keycode == KEY_TAB:
+		if event.is_action("b17_autopiloto"):
 			toggle_autopilot(sim)
 			return true
-		elif event.physical_keycode == KEY_1:
+		elif event.is_action("b17_piloto"):
 			set_station("PILOTO", sim)
 			return true
-		elif event.physical_keycode == KEY_2:
+		elif event.is_action("b17_artillero"):
 			set_station("ARTILLERO", sim)
 			return true
-		elif event.physical_keycode == KEY_3:
+		elif event.is_action("b17_bombardero"):
 			set_station("BOMBARDERO", sim)
 			return true
 		elif event.physical_keycode == KEY_Q and station == "ARTILLERO":

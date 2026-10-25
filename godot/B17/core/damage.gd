@@ -40,10 +40,10 @@ func use_extinguisher(idx: int) -> void:
         engine_extinguisher_used[idx] = 1
         engines[idx] = clampf(engines[idx] + 8.0, 0.0, 25.0)
 
-func apply_instrument_damage(proximity: float) -> void:
+func apply_instrument_damage(proximity: float, jitter_scale: float = 1.0) -> void:
     if proximity > 80.0:
         return
-    var severity: float = 1.0 - (proximity / 80.0)
+    var severity: float = (1.0 - (proximity / 80.0)) * clampf(jitter_scale, 0.0, 1.0)
     if randf() < severity * 0.45:
         altimeter_error = randf_range(-40.0, 40.0) * severity
         compass_drift = randf_range(-0.08, 0.08) * severity

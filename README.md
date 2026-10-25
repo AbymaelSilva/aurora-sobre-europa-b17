@@ -58,7 +58,9 @@ Las pruebas visuales (capturas GPU) requieren ventana real, sin `--headless`.
 
 ## Estado
 
-Godot 4.7.2 fijado como motor definitivo. Lotes de combate, audio, cámara orbital y terreno integrados y verificados. Mejoras de menús/opciones (audio, video, controles, accesibilidad, dificultad) en curso — ver `planning/ANALISIS_MEJORAS_MENUS_OPCIONES.md` y `planning/PRIORIZACION_COMPLEJIDAD_MENUS_OPCIONES.md` para el detalle y la priorización por complejidad.
+Godot 4.7.2 fijado como motor definitivo. Lotes de combate, audio, cámara orbital y terreno integrados y verificados.
+
+Menú principal, panel de Opciones (Audio/Video/Controles/Jugabilidad/Accesibilidad), remapeo de teclas con detección de conflictos, dificultad, modo de color para daltonismo y guardado/continuación de misión ya están implementados — ver `planning/ANALISIS_MEJORAS_MENUS_OPCIONES.md` y `planning/PRIORIZACION_COMPLEJIDAD_MENUS_OPCIONES.md` para el detalle de cada mejora y su estado. Pendiente explícito: doblaje/voces en más de un idioma (requiere locución nueva, no es un cambio de código) y todo lo marcado como SUPERIOR (campaña multi-misión, certificación de plataforma, multijugador, localización profesional completa).
 
 ## Nota sobre control de versiones
 

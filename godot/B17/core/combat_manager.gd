@@ -25,6 +25,7 @@ func reset() -> void:
 	rng.seed = 1945
 
 const Config = preload("res://core/combat_config.gd")
+var max_effective_attackers: int = Config.MAX_EFFECTIVE_ATTACKERS
 var effective_attackers := 0
 var peak_attackers := 0
 var wave_complete := false
@@ -69,7 +70,7 @@ func step(delta: float, bomber_pos: Vector3, bomber_yaw: float, mission_phase: S
 			var ai = fighter["ai"]
 			ai.step(delta, bomber_pos)
 			var dist: float = ai.position.distance_to(bomber_pos)
-			if ai.is_attacking() and dist < 650.0 and effective_attackers < Config.MAX_EFFECTIVE_ATTACKERS and ai.velocity.normalized().dot((bomber_pos - ai.position).normalized()) > 0.60:
+			if ai.is_attacking() and dist < 650.0 and effective_attackers < max_effective_attackers and ai.velocity.normalized().dot((bomber_pos - ai.position).normalized()) > 0.60:
 				effective_attackers += 1
 			else:
 				continue

@@ -1,6 +1,7 @@
 extends Control
 
 const InputProfile = preload("res://core/input_profile.gd")
+const AccessibilityPalette = preload("res://core/accessibility_palette.gd")
 
 var data: Dictionary = {}
 var font: Font = ThemeDB.fallback_font
@@ -8,6 +9,12 @@ var gold := Color(0.88, 0.74, 0.46)
 var white := Color(0.92, 0.94, 0.94)
 var muted := Color(0.64, 0.72, 0.75)
 var panel := Color(0.025, 0.04, 0.055, 0.86)
+var colorblind_mode: String = "NINGUNO"
+var subtitle_scale: float = 1.0
+var subtitle_opacity: float = 1.0
+
+func _pal(semantic: String) -> Color:
+    return AccessibilityPalette.color_for(semantic, colorblind_mode)
 
 func _ready() -> void:
     mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -71,13 +78,13 @@ func _draw() -> void:
     for i in range(4):
         var hp: float = float(eng_hp[i]) if i < eng_hp.size() else 100.0
         var fth: bool = bool(eng_fth[i]) if i < eng_fth.size() else false
-        var col := Color(0.3, 0.85, 0.4)
+        var col := _pal("positive")
         if fth:
             col = Color(0.5, 0.5, 0.5)
         elif hp < 20.0:
-            col = Color(0.9, 0.2, 0.2)
+            col = _pal("danger")
         elif hp < 45.0:
-            col = Color(0.9, 0.6, 0.2)
+            col = _pal("warning")
         draw_rect(Rect2(43 + i * 42, height - 52, 34, 12), col)
         var m_lbl := "M%d" % (i + 1) if not fth else "F%d" % (i + 1)
         text(Vector2(50 + i * 42, height - 42), m_lbl, 10, Color.BLACK)
@@ -160,13 +167,13 @@ func _draw() -> void:
 
         draw_rect(Rect2(width / 2 - 240, height - 100, 480, 58), panel)
         if norden_off:
-            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), Color(0.9, 0.2, 0.2))
-            draw_string(font, Vector2(width / 2 - 220, height - 68), "NORDEN AVERIADO · SUELTA MANUAL", HORIZONTAL_ALIGNMENT_CENTER, 440, 16, Color(0.95, 0.25, 0.25))
+            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), _pal("danger"))
+            draw_string(font, Vector2(width / 2 - 220, height - 68), "NORDEN AVERIADO · SUELTA MANUAL", HORIZONTAL_ALIGNMENT_CENTER, 440, 16, _pal("danger"))
             draw_string(font, Vector2(width / 2 - 220, height - 48), "METRALLA DE FLAK EN EL VISOR", HORIZONTAL_ALIGNMENT_CENTER, 440, 11, muted)
         elif bomb_spent:
             if bomb_result == "IMPACTO":
-                draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), Color(0.2, 0.95, 0.3))
-                draw_string(font, Vector2(width / 2 - 220, height - 72), "ALFOMBRA DE BOMBAS IMPACTADA", HORIZONTAL_ALIGNMENT_CENTER, 440, 15, Color(0.2, 0.95, 0.3))
+                draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), _pal("positive"))
+                draw_string(font, Vector2(width / 2 - 220, height - 72), "ALFOMBRA DE BOMBAS IMPACTADA", HORIZONTAL_ALIGNMENT_CENTER, 440, 15, _pal("positive"))
                 draw_string(font, Vector2(width / 2 - 220, height - 50), "BOMBAS FUERA · IMPACTO EN BLANCO", HORIZONTAL_ALIGNMENT_CENTER, 440, 12, white)
             elif salvo_in_flight:
                 draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), gold)
@@ -177,12 +184,12 @@ func _draw() -> void:
                 draw_string(font, Vector2(width / 2 - 220, height - 66), "BOMBAS FUERA · OBSERVANDO IMPACTO", HORIZONTAL_ALIGNMENT_CENTER, 440, 15, muted)
         elif release_now:
             var bomb_prompt: String = InputProfile.prompt("soltar", prof)
-            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), Color(0.2, 0.95, 0.3))
-            draw_string(font, Vector2(width / 2 - 220, height - 68), "¡¡ SUELTA AHORA !! [%s]" % bomb_prompt, HORIZONTAL_ALIGNMENT_CENTER, 440, 20, Color(0.2, 0.95, 0.3))
+            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), _pal("positive"))
+            draw_string(font, Vector2(width / 2 - 220, height - 68), "¡¡ SUELTA AHORA !! [%s]" % bomb_prompt, HORIZONTAL_ALIGNMENT_CENTER, 440, 20, _pal("positive"))
             draw_string(font, Vector2(width / 2 - 220, height - 48), "SOLUCIÓN BALÍSTICA VÁLIDA", HORIZONTAL_ALIGNMENT_CENTER, 440, 11, white)
         elif status_str == "PASADO":
-            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), Color(0.9, 0.3, 0.2))
-            draw_string(font, Vector2(width / 2 - 220, height - 66), "OBJETIVO SUPERADO · FUERA DE VENTANA", HORIZONTAL_ALIGNMENT_CENTER, 440, 15, Color(0.9, 0.3, 0.2))
+            draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), _pal("danger"))
+            draw_string(font, Vector2(width / 2 - 220, height - 66), "OBJETIVO SUPERADO · FUERA DE VENTANA", HORIZONTAL_ALIGNMENT_CENTER, 440, 15, _pal("danger"))
         elif absf(lat_err) > 45.0:
             var dir_txt: String = "GIRAR A LA DERECHA (D)" if lat_err > 0.0 else "GIRAR A LA IZQUIERDA (A)"
             draw_rect(Rect2(width / 2 - 240, height - 100, 480, 3), gold)
@@ -209,10 +216,16 @@ func _draw() -> void:
     if not radio_text.is_empty():
         var lines: PackedStringArray = subtitle_lines(radio_text)
         var line_count: int = mini(2, lines.size())
-        var box_height: float = 14.0 + line_count * 25.0
-        draw_rect(Rect2(width / 2 - 480, height - 174, 960, box_height), panel)
+        var sub_size: int = roundi(20.0 * subtitle_scale)
+        var line_h: float = 25.0 * subtitle_scale
+        var box_height: float = 14.0 + line_count * line_h
+        var sub_panel: Color = panel
+        sub_panel.a *= subtitle_opacity
+        var sub_white: Color = white
+        sub_white.a = subtitle_opacity
+        draw_rect(Rect2(width / 2 - 480, height - 174, 960, box_height), sub_panel)
         for i in range(line_count):
-            draw_string(font, Vector2(width / 2 - 460, height - 150 + i * 25), lines[i], HORIZONTAL_ALIGNMENT_CENTER, 920, 20, white)
+            draw_string(font, Vector2(width / 2 - 460, height - 150 + i * line_h), lines[i], HORIZONTAL_ALIGNMENT_CENTER, 920, sub_size, sub_white)
 
     if phase in ["COMPLETADA", "FALLIDA"]:
         draw_rect(Rect2(width / 2 - 320, height * 0.35, 640, 210), panel)

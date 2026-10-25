@@ -50,4 +50,18 @@ Esta edición está compilada y optimizada para dispositivos portátiles con Win
 
 * **Piloto Automático:** Al iniciar o al cambiar a observar a un compañero, el piloto automático se activa automáticamente para proteger la formación. Presiona **`View / Back`** (o `TAB`) para tomar el timón manual en cualquier momento.
 * **Cámara en 3ª Persona:** Puedes volar y observar el combate completo desde el exterior. Para recentrar la vista inmediatamente detrás de tu B-17 pulsa **`R3`** (o tecla `C`).
-* **Audio y Voces:** Todas las conversaciones de tripulación están en inglés de época con subtítulos localizados al español. Los controles de volumen de música, efectos y voces son accesibles desde el menú de pausa.
+* **Audio y Voces:** Todas las conversaciones de tripulación están en inglés de época con subtítulos localizados al español.
+
+---
+
+### Menú principal y Opciones
+
+El juego ya no arranca directo en vuelo: abre primero un **menú principal** con Jugar / Continuar (si hay una misión en curso guardada) / Opciones / Créditos / Salir. El botón **Opciones** (también disponible desde el menú de pausa, `Escape` o `Start/Menu`) abre un panel con pestañas:
+
+* **Audio** — volumen general y por canal (música, efectos, voces), además de los interruptores rápidos de música/voces.
+* **Video** — resolución, ventana/pantalla completa/sin bordes, V-Sync y calidad gráfica.
+* **Controles** — perfil (Teclado/Xbox/ROG Ally X), sensibilidad de cabeceo/giro/potencia, invertir cabeceo, y **remapeo individual** de las teclas de puesto (Piloto/Artillero/Bombardero), pausa, piloto automático y reinicio, con detección de conflictos. Las teclas de motores (`F1`-`F4`), torretas (`Q`) y escoltas (`E`) no son remapeables.
+* **Jugabilidad** — dificultad (Fácil/Normal/Difícil, afecta el daño de flak y el número de cazas atacando a la vez) y ayudas de vuelo (controles más suaves).
+* **Accesibilidad** — tamaño y opacidad de subtítulos, reducción del jitter de instrumentos por flak, modo de color para daltonismo (protanopía/deuteranopía/tritanopía) e idioma de la interfaz (español/inglés; las voces y el HUD de misión siguen en su idioma original).
+
+Al reiniciar la misión desde la pausa se pide confirmación (pulsar el botón dos veces). Al volver al menú principal o cerrar el juego a mitad de misión, el progreso se guarda automáticamente y aparece como "Continuar" la próxima vez.

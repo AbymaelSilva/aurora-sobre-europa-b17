@@ -2,6 +2,12 @@
 
 Reordena las mejoras de `ANALISIS_MEJORAS_MENUS_OPCIONES.md` por dificultad técnica/riesgo, para decidir qué abordar primero. Numeración: Complejidad.Área.Cambio.Detalle (ej. `1.1.1.1`).
 
+## Estado de implementación (2026-10-24)
+
+**BAJO y MEDIO: implementados completos.** **ALTO: implementado salvo 3.3.1.** Código en `core/settings_manager.gd`, `core/input_actions.gd`, `core/accessibility_palette.gd`, `core/save_game.gd`, `core/i18n.gd`, `ui/main_menu.gd`, `ui/options_menu.gd`, `ui/settings_menu.gd` (reescrito), más ajustes puntuales en `game.gd`, `core/player_controls.gd`, `core/damage.gd`, `core/simulation.gd`, `core/combat_manager.gd` y `ui/mission_overlay.gd`. Pruebas automatizadas nuevas en `tests/test_main_menu_smoke.gd`, `tests/test_options_integration.gd`, `tests/test_save_game.gd`, `tests/test_input_actions.gd`; toda la suite existente sigue en verde (las fallas preexistentes `test_claude_batch`, `test_local_bombing_usability`, `test_qwen_assets`, `test_manual_mission_claude` se confirmaron ajenas a este trabajo, vía `git stash`).
+
+Único pendiente real: **3.3.1 (voz en más de un idioma)** no se hizo — no es código, requiere locución grabada que no existe en el proyecto. El selector de idioma de interfaz (3.3.2) sí funciona, pero solo traduce el menú principal y el panel de Opciones (lo que se escribió en esta tanda); el HUD de misión y los subtítulos de las voces existentes quedan fuera de ese alcance. Nivel SUPERIOR no se tocó, como estaba previsto.
+
 ## 1. BAJO — reutiliza código/variables ya existentes, sin pantallas nuevas
 
 - 1.1 Audio
