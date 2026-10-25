@@ -1,8 +1,27 @@
 extends SceneTree
 
+const SETTINGS_FILE_PATH := "user://b17_settings.cfg"
+var original_settings_data: PackedByteArray = []
+var original_settings_existed: bool = false
+
+func _backup_settings() -> void:
+	original_settings_existed = FileAccess.file_exists(SETTINGS_FILE_PATH)
+	if original_settings_existed:
+		original_settings_data = FileAccess.get_file_as_bytes(SETTINGS_FILE_PATH)
+
+func _restore_settings() -> void:
+	if original_settings_existed:
+		var f := FileAccess.open(SETTINGS_FILE_PATH, FileAccess.WRITE)
+		if f != null:
+			f.store_buffer(original_settings_data)
+			f.close()
+	elif FileAccess.file_exists(SETTINGS_FILE_PATH):
+		DirAccess.remove_absolute(SETTINGS_FILE_PATH)
+
 func check(ok: bool, msg: String) -> bool:
 	if not ok:
 		push_error("TEST FAIL: " + msg)
+		_restore_settings()
 		quit(1)
 	return ok
 
@@ -10,6 +29,12 @@ func _initialize() -> void:
 	call_deferred("run")
 
 func run() -> void:
+	# Se respalda/restaura user://b17_settings.cfg porque game.gd ahora carga
+	# musica/voces persistidas al arrancar (SettingsManager); sin esto, el
+	# resultado dependeria del estado que haya dejado otra prueba en el disco.
+	_backup_settings()
+	if FileAccess.file_exists(SETTINGS_FILE_PATH):
+		DirAccess.remove_absolute(SETTINGS_FILE_PATH)
 	var sim = load("res://core/simulation.gd").new()
 	var director = load("res://audio/scene_audio_director.gd").new()
 	root.add_child(director)
@@ -76,5 +101,6 @@ func run() -> void:
 		root.get_texture().get_image().save_png("res://../../logs/dialogue_music/subtitles_camera.png")
 	scene.queue_free()
 	await process_frame
+	_restore_settings()
 	print("TEST PASS: voces, guion/subtítulos, no repetición, prioridad, música, pausa y reinicio")
 	quit(0)
