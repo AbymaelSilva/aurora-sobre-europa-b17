@@ -1,0 +1,3636 @@
+{
+  "engine_b17_ext_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 20,
+        "output_s": 8.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 128876
+      }
+    ],
+    "technique": "DC-3 radial: ventana 20 s, paso alto65; exterior LP3300 / interior LP1250 y estructura LP210; crossfade200ms",
+    "limitations": "Dos motores DC-3 en despegue desde tierra; aproximación, no B-17 en crucero ni cabina real",
+    "linear_gain": 1.3268896199502531,
+    "gain_db": 2.4566959336964014,
+    "duration_s": 8.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -7.36,
+    "previous_sha256": "caafcc7ffa4c7262def915f9e3f8802911acc42e226c2d464f9e7c1cf97752b4",
+    "final_sha256": "91e7e518f16ed39761d35f44cdabdf8d35396a56f0b17086252b6fddab012791",
+    "changed": true
+  },
+  "engine_b17_int_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 20,
+        "output_s": 8.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 244922
+      }
+    ],
+    "technique": "DC-3 radial: ventana 20 s, paso alto65; exterior LP3300 / interior LP1250 y estructura LP210; crossfade200ms",
+    "limitations": "Dos motores DC-3 en despegue desde tierra; aproximación, no B-17 en crucero ni cabina real",
+    "linear_gain": 1.2544324592685185,
+    "gain_db": 1.9689456628471174,
+    "duration_s": 8.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -7.85,
+    "previous_sha256": "58b4c3a2bf346b92981f4aa3a193b8911f36fdca7bc23cc019deb7b66c844e54",
+    "final_sha256": "c11a42c5f0c6964b7893141d65f11b348350db01e7256ed8f27a7456eaca1be1",
+    "changed": true
+  },
+  "engine_b17_damaged_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 26,
+        "output_s": 6.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "metal",
+        "start_s": 0.25660997732426305,
+        "output_s": 0.15,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 153400
+      }
+    ],
+    "technique": "Combustión grabada troceada con puerta irregular suavizada + vibración metálica; HP220/LP2800",
+    "limitations": "Aproximación de avería aditiva, sin duplicar motor sano completo",
+    "linear_gain": 1.9318645660730298,
+    "gain_db": 5.719533536115047,
+    "duration_s": 6.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.71,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "f21a07f7c5db99755131c5eb4ca33fc3f999e99d86308eb2733a03cb6d39e224",
+    "final_sha256": "652ad4de2c8217412e9cb2bbad9bfdc018370967d54e4486646f728b1271d837",
+    "changed": true
+  },
+  "engine_sputter_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 23,
+        "output_s": 1.25,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "metal",
+        "start_s": 0.25660997732426305,
+        "output_s": 0.15,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Combustión grabada troceada con puerta irregular suavizada + vibración metálica; HP220/LP2800",
+    "limitations": "Aproximación de avería aditiva, sin duplicar motor sano completo",
+    "linear_gain": 5.047155502333997,
+    "gain_db": 14.060933710149099,
+    "duration_s": 1.25,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -4.82,
+    "previous_sha256": "34906cee958cb61f8f3ca1bbae969606711cb8f9b3cd7fe84bdd64c2ebcc837e",
+    "final_sha256": "b5edf76e14f0afffcc8365a5fa8c2a6a03ac19cbab5905e5b9f563b4bd6f373d",
+    "changed": true
+  },
+  "engine_sputter_02.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 26,
+        "output_s": 1.25,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "metal",
+        "start_s": 0.25660997732426305,
+        "output_s": 0.15,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Combustión grabada troceada con puerta irregular suavizada + vibración metálica; HP220/LP2800",
+    "limitations": "Aproximación de avería aditiva, sin duplicar motor sano completo",
+    "linear_gain": 2.1721396975324008,
+    "gain_db": 6.737755054767814,
+    "duration_s": 1.25,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -6.79,
+    "previous_sha256": "4d7f91af8a552597482fa315696dcd0169e67da5f42ae303c195c7effb51f7bf",
+    "final_sha256": "403b5d09a7628feaceea24dba172b7262a6724a6b16eb45c7068b65242d1292d",
+    "changed": true
+  },
+  "engine_fire_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 676385,
+        "author": "StevenMyat_",
+        "url": "https://freesound.org/people/StevenMyat_/sounds/676385/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/676/676385_14682249-hq.mp3"
+        ],
+        "description": "Camp fire Crackling",
+        "original_sha256": "aba832af7fdc78ddeb3961c3aa5ed3b0ab0f3c9a0d2762161eab7e0d2ba7c9a8",
+        "decoded_sha256": "95c7281c232be0eaa28031a240ab7a58daddad09de2e4a1ecc97b163fdfefaf5",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-decoded.wav"
+        ],
+        "title": "Freesound - Fire Crackling by StevenMyat_",
+        "individual_page_sha256": "3f881fbfc5627e257f47f9b4b2e4d524965f836ed7a98fce04490c510c6b17b4",
+        "key": "fire"
+      },
+      {
+        "id": 146914,
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+        ],
+        "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+        "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+        "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+        ],
+        "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+        "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1",
+        "key": "wind"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "fire",
+        "start_s": 0.5,
+        "output_s": 5.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "wind",
+        "start_s": 20,
+        "output_s": 5.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 97695
+      }
+    ],
+    "technique": "Fuego de campo + viento grabado 20/80 RMS, banda65–2500/1900; crossfade200ms",
+    "limitations": "Fuego de campamento adaptado; no combustible aeronáutico grabado",
+    "linear_gain": 0.12588102359017564,
+    "gain_db": -18.000794686361978,
+    "duration_s": 5.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -5.58,
+    "previous_sha256": "efec207bb0c219c6537cafc51013e34eb0b92923a157e0ce2139f54186b8dbd0",
+    "final_sha256": "51732e8bf98bb492c58084d1c562f15f273c456f631f1e595b18351eea1259e9",
+    "changed": true
+  },
+  "wind_altitude_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 146914,
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+        ],
+        "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+        "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+        "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+        ],
+        "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+        "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1",
+        "key": "wind"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "wind",
+        "start_s": 20,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "wind",
+        "start_s": 20,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 111623
+      }
+    ],
+    "technique": "Viento de desierto estéreo filtrado65–3600, sin silbido añadido; crossfade200ms",
+    "limitations": "Perspectiva terrestre adaptada, no flujo medido a 6000 m",
+    "linear_gain": 0.7759085550296602,
+    "gain_db": -2.203789193036766,
+    "duration_s": 10.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -3.04,
+    "previous_sha256": "44e397c68b2e4fc147c898ff9c7c11402f2c3f1c00f38f608e014f2e9b8c1753",
+    "final_sha256": "9e5a5d856b74d2a12a110cb8a7f2a998d60fb49d0050efc29c0235335a11aac2",
+    "changed": true
+  },
+  "formation_drone_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 5,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "radial",
+        "start_s": 18,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "radial",
+        "start_s": 12,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "radial",
+        "start_s": 15,
+        "output_s": 10.2,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 223901
+      }
+    ],
+    "technique": "DC-3 radial: cuatro ventanas distintas, campo difuso estéreo LP650/850; sin sincronía entre capas",
+    "limitations": "Campo diseñado, no grabación de 300 B-17",
+    "linear_gain": 0.1377830291611862,
+    "gain_db": -17.216085430213248,
+    "duration_s": 10.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -3.0,
+    "previous_sha256": "5e6d437f047ab7009d8b8ce6b6c926e214c4c50cac16e287f44cc9e3fab8a029",
+    "final_sha256": "4883245164a30c4ae08fd9ed936ccb8ab0ae968a8317e5fede70a86e9da35687",
+    "changed": true
+  },
+  "hit_hull_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 262516,
+        "author": "Stereo Surgeon",
+        "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/262/262516_2297168-hq.mp3"
+        ],
+        "description": "A sharp metallic percussion sound from me hitting a sheet of steel with a steel implement.\n\n[Key: ]\n[Format: wav]\n[License: CC 0]",
+        "original_sha256": "357e0f322efbb2e208a3d156dab0eacb02036177713cc5c549e0d54bfd246ac6",
+        "decoded_sha256": "1870c28c08a0719278b0a924e99dc19bc3d837e17172190a64e1c1818a52db55",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-decoded.wav"
+        ],
+        "title": "Freesound - Metal Sheet Hit by Stereo Surgeon",
+        "individual_page_sha256": "7ddfc9de7f66c918d54565faeb7f6f708a53b17c6d63194f75d0dbe7b9b9b453",
+        "key": "sheet"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "sheet",
+        "start_s": 0,
+        "output_s": 0.3,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.26660997732426306,
+        "output_s": 0.16,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Chapa de acero golpeada / golpe metálico: corte seco, amortiguación exponencial aperiódica; rattle montado irregular",
+    "limitations": "Fóley de acero, no perforación balística de aluminio",
+    "linear_gain": 1.0428325176527644,
+    "gain_db": 0.3642912979691249,
+    "duration_s": 0.3,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -16.51,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "1da354e9b88fb5cc3dd44a7acf68c2c8856534f2151a1b6654bcad5083c4cfad",
+    "final_sha256": "7b10dc8589604d61a076ee321726752ca0864e028d065414d24268b2f8f10105",
+    "changed": true
+  },
+  "hit_hull_02.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "metal",
+        "start_s": 0.23160997732426303,
+        "output_s": 0.3,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Chapa de acero golpeada / golpe metálico: corte seco, amortiguación exponencial aperiódica; rattle montado irregular",
+    "limitations": "Fóley de acero, no perforación balística de aluminio",
+    "linear_gain": 1.5035141628415474,
+    "gain_db": 3.5421504686836642,
+    "duration_s": 0.3,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -16.87,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "748ad6ce00156d5288460c6ce628a411db39be7bb67ccf506a0c24b14c64149d",
+    "final_sha256": "6da8ddeb78818c8aca5c5e483183ab5538dacbf9ed29a973eb305a7d04eb4134",
+    "changed": true
+  },
+  "hit_hull_03.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 262516,
+        "author": "Stereo Surgeon",
+        "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/262/262516_2297168-hq.mp3"
+        ],
+        "description": "A sharp metallic percussion sound from me hitting a sheet of steel with a steel implement.\n\n[Key: ]\n[Format: wav]\n[License: CC 0]",
+        "original_sha256": "357e0f322efbb2e208a3d156dab0eacb02036177713cc5c549e0d54bfd246ac6",
+        "decoded_sha256": "1870c28c08a0719278b0a924e99dc19bc3d837e17172190a64e1c1818a52db55",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-decoded.wav"
+        ],
+        "title": "Freesound - Metal Sheet Hit by Stereo Surgeon",
+        "individual_page_sha256": "7ddfc9de7f66c918d54565faeb7f6f708a53b17c6d63194f75d0dbe7b9b9b453",
+        "key": "sheet"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "sheet",
+        "start_s": 0,
+        "output_s": 0.3,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.26660997732426306,
+        "output_s": 0.16,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Chapa de acero golpeada / golpe metálico: corte seco, amortiguación exponencial aperiódica; rattle montado irregular",
+    "limitations": "Fóley de acero, no perforación balística de aluminio",
+    "linear_gain": 0.9717218039590393,
+    "gain_db": -0.24916104506658976,
+    "duration_s": 0.3,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -14.54,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "01d693c873c72b570ea657ff297a8b3da4b63e73362b9711bfa51ca8ce3292b2",
+    "final_sha256": "f3b97a4cda14853f5919d77542f5107dc58efe03ca3842e2c688b42a450c68c8",
+    "changed": true
+  },
+  "shrapnel_rattle_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 262516,
+        "author": "Stereo Surgeon",
+        "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/262/262516_2297168-hq.mp3"
+        ],
+        "description": "A sharp metallic percussion sound from me hitting a sheet of steel with a steel implement.\n\n[Key: ]\n[Format: wav]\n[License: CC 0]",
+        "original_sha256": "357e0f322efbb2e208a3d156dab0eacb02036177713cc5c549e0d54bfd246ac6",
+        "decoded_sha256": "1870c28c08a0719278b0a924e99dc19bc3d837e17172190a64e1c1818a52db55",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-decoded.wav"
+        ],
+        "title": "Freesound - Metal Sheet Hit by Stereo Surgeon",
+        "individual_page_sha256": "7ddfc9de7f66c918d54565faeb7f6f708a53b17c6d63194f75d0dbe7b9b9b453",
+        "key": "sheet"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "metal",
+        "start_s": 0.23160997732426303,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "sheet",
+        "start_s": 0.0016825396825396826,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.23560997732426303,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "sheet",
+        "start_s": 0,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.23360997732426303,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "sheet",
+        "start_s": 0.0036825396825396826,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.23160997732426303,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "sheet",
+        "start_s": 0.0016825396825396826,
+        "output_s": 0.13,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Chapa de acero golpeada / golpe metálico: corte seco, amortiguación exponencial aperiódica; rattle montado irregular",
+    "limitations": "Fóley de acero, no perforación balística de aluminio",
+    "linear_gain": 2.191328757169559,
+    "gain_db": 6.814150761747181,
+    "duration_s": 0.8,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -18.7,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "b1faed2fa3323515c09bdb99cf9f923967fe2e9fdf7cfb37a48095a41ca92951",
+    "final_sha256": "a9cfd6e4f858127761387e0965793456e83c9f6477629b3b453834f8c7226283",
+    "changed": true
+  },
+  "damage_alarm_bell.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 217486,
+        "author": "sbyandiji",
+        "url": "https://freesound.org/people/sbyandiji/sounds/217486/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/217/217486_4017029-hq.mp3"
+        ],
+        "description": "A short alarm school bell recorded in a UK school-hall. Two blasts, some background room-tone with clock ticking.\n\nMics: SE electronics RN17 as coincident pair\nMic pres/Recorder: Apogee ensemble into Logic",
+        "original_sha256": "7002da5342726dfeb13ce79f13cbd0297f2540a4324ee82a4dd6e7f38c3b3c4d",
+        "decoded_sha256": "ae30e4f476940ddc02297331e0103657533e56ed340a39884f3d1d9748baa90a",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/alarm-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/alarm-decoded.wav"
+        ],
+        "title": "Freesound - Short Alarm bell in school hall (some clock ticks etc).aif by sbyandiji",
+        "individual_page_sha256": "e8bf48a22ceb849ffd9339b690d9b4932558f84447c735975fc0024e29760ba2",
+        "key": "alarm"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "alarm",
+        "start_s": 0.9996598639455783,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Timbre electromecánico escolar: selección del inicio del primer toque, HP250/LP4800",
+    "limitations": "Sala escolar en grabación; no alarma certificada de B-17",
+    "linear_gain": 4.045146331299135,
+    "gain_db": 12.138684732692735,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.15,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "7f97eea4bf0386f0efa8bc1df12000495ca4e20f879b82146c785ca6855c9a6b",
+    "final_sha256": "bf53e7264951074234cb45bb66383df02bd870498f2051373c66f242c08984ea",
+    "changed": true
+  },
+  "fighter_flyby_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 29,
+        "output_s": 3.5,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "radial",
+        "start_s": 29,
+        "output_s": 3.5,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Dos ventanas del paso real del DC-3: 29s y31.2s; estéreo original, sin Doppler/pan adicional",
+    "limitations": "Aproximación de paso de pistón radial; no Bf109/Fw190 ni dos pasadas independientes",
+    "linear_gain": 0.5214310109238752,
+    "gain_db": -5.656062874453751,
+    "duration_s": 3.5,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -7.29,
+    "previous_sha256": "dbe8ca625b847874be485960989a8ba85e669b5e51dd3e3beb08e3cbcb4a1fff",
+    "final_sha256": "86ceb08354be02c570546c1edbaab29d71230cbfa41f0f1e84ae1a6d9d4cc951",
+    "changed": true
+  },
+  "fighter_flyby_02.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 31.2,
+        "output_s": 3.5,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "radial",
+        "start_s": 31.2,
+        "output_s": 3.5,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Dos ventanas del paso real del DC-3: 29s y31.2s; estéreo original, sin Doppler/pan adicional",
+    "limitations": "Aproximación de paso de pistón radial; no Bf109/Fw190 ni dos pasadas independientes",
+    "linear_gain": 0.8526535151029581,
+    "gain_db": -1.384548264072115,
+    "duration_s": 3.5,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -4.38,
+    "previous_sha256": "19d1ca2aaa28525a9f06429979c97e2af291f3006d1176aa04e571b407960455",
+    "final_sha256": "7609f9eb70f226e960bdce034784f7952596ae6a66ca699c8c31c5e8dda17dce",
+    "changed": true
+  },
+  "fighter_engine_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 25,
+        "output_s": 4.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 88330
+      }
+    ],
+    "technique": "DC-3 radial, ventana25s HP65/LP3700; crossfade200ms",
+    "limitations": "DC-3 usado como aproximación de pistón; no modelo de caza ni caída real",
+    "linear_gain": 0.9951773934609943,
+    "gain_db": -0.041989960272854385,
+    "duration_s": 4.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -9.01,
+    "previous_sha256": "1b1c6b3def164d13178fbe5c6335506ebdd35137d597dd9c691ad3a83a5daae4",
+    "final_sha256": "b8a2373fa44d81825822ef0a0e718c17ff054a481796c64f48494ee5c887eef9",
+    "changed": true
+  },
+  "fighter_falling_whine.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 32,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Alejamiento real de pistón, HP140/LP3200; sin silbido de turbina ni caída senoidal",
+    "limitations": "DC-3 usado como aproximación de pistón; no modelo de caza ni caída real",
+    "linear_gain": 2.2863168963539544,
+    "gain_db": 7.182728517681545,
+    "duration_s": 4.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -3.6,
+    "previous_sha256": "de20c3199cbcfe1e2fcdda298b9a555a5068728f0ae7482852e1ce011fc2f44d",
+    "final_sha256": "278cf4167424e158f21c1460dace0ab8dfbb9bd44be862987c4a036eb2db4191",
+    "changed": true
+  },
+  "fighter_guns_distant.wav": {
+    "kind": "síntesis",
+    "sources": [],
+    "cuts": [],
+    "technique": "Síntesis aperiódica independiente: ráfaga10 golpes de ruido180–1750Hz, colas25/70ms; no fuente M2",
+    "limitations": "Sin grabación compatible de cañón aéreo encontrada; no autenticidad MG151/20",
+    "linear_gain": 2.3393274931790704,
+    "gain_db": 7.381820498812032,
+    "duration_s": 1.2,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -19.98,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "bbfd2a843034420f457cfebe48e9e06d1bbdb8a4388316deba53b280d126c3f5",
+    "final_sha256": "19dd5ab7f18b8a8fbf5f4586e409d9f141c066b2f584b6edd8a54215769ab95c",
+    "changed": true
+  },
+  "fighter_explosion.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 676385,
+        "author": "StevenMyat_",
+        "url": "https://freesound.org/people/StevenMyat_/sounds/676385/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/676/676385_14682249-hq.mp3"
+        ],
+        "description": "Camp fire Crackling",
+        "original_sha256": "aba832af7fdc78ddeb3961c3aa5ed3b0ab0f3c9a0d2762161eab7e0d2ba7c9a8",
+        "decoded_sha256": "95c7281c232be0eaa28031a240ab7a58daddad09de2e4a1ecc97b163fdfefaf5",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-decoded.wav"
+        ],
+        "title": "Freesound - Fire Crackling by StevenMyat_",
+        "individual_page_sha256": "3f881fbfc5627e257f47f9b4b2e4d524965f836ed7a98fce04490c510c6b17b4",
+        "key": "fire"
+      },
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 2.5,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "fire",
+        "start_s": 5,
+        "output_s": 2.5,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.151944366740382,
+    "gain_db": 1.2286301060305462,
+    "duration_s": 2.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -17.43,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "e17837327f897a1aa794eb8bf0fe000ff1be5d080008df5da1cbdfe0e0c31ba9",
+    "final_sha256": "e7925582de74c092f4fcd4c6fee98e8d9504202be61daae8db1bd16f9864039e",
+    "changed": true
+  },
+  "flak_near_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.1452347542334584,
+    "gain_db": 1.1778903801241318,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.55,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "612ed1235dbe5560e7004125f5fb91e0628a0c54f67cdfe567bec45a1f90754d",
+    "final_sha256": "d5c99b5718bac44ea86f0310487fc932f07f497258c53241b14e534ddaf9734f",
+    "changed": true
+  },
+  "flak_near_02.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.1706349206349205,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.3353141263151465,
+    "gain_db": 2.5116688687318827,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -14.0,
+    "peak_dbfs": -1.52,
+    "previous_sha256": "9e6da640a9087e5004da2fd367f70f073a161c136b02e4554e2893024a14bf5a",
+    "final_sha256": "970dac3bd4079450aef5922b196123adb1f402f92ce59fec53b1d6d9e4109f36",
+    "changed": true
+  },
+  "flak_near_03.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.0778527102127284,
+    "gain_db": 0.6511883614996543,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.65,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "14323072731e85197039da3405123f3fb85b11e7f80df124ce8700a177eccdb9",
+    "final_sha256": "706b55b6902e5448502f3c71a694f88c226643394c30f8658408ba889ea83060",
+    "changed": true
+  },
+  "flak_far_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.9771495456545185,
+    "gain_db": 5.920790385730155,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -14.32,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "677381106297313b9858d7d5d8b7bb7e52c7043806ed8f41d1e0f771bb601906",
+    "final_sha256": "92768233f225051f03dd494d9f997cdcb4521c3ce70f1a557fc61a43bb48ea92",
+    "changed": true
+  },
+  "flak_far_02.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.1706349206349205,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.5383008876776931,
+    "gain_db": 3.740825813047218,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -14.0,
+    "peak_dbfs": -1.81,
+    "previous_sha256": "3024da0ca4f801420f156e43b8a2fab6fc2a4c56a6823287e4c1be559ba68160",
+    "final_sha256": "5cbabe60b98b0e7dd5c325a4488bbc48a3a656ca7d37356f7381996fc8fa711f",
+    "changed": true
+  },
+  "bomb_bay_doors_open.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      },
+      {
+        "id": 146914,
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+        ],
+        "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+        "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+        "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+        ],
+        "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+        "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1",
+        "key": "wind"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "metal",
+        "start_s": 0.36,
+        "output_s": 1.85,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "wind",
+        "start_s": 30,
+        "output_s": 2.5,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Fóley de pestillos con interruptor + metal; puertas añaden fricción y viento progresivo; sin pitido",
+    "limitations": "Aproximación mecánica; no motor ni bisagras originales de compuerta B-17",
+    "linear_gain": 4.697732011906478,
+    "gain_db": 13.437764765350021,
+    "duration_s": 2.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -24.41,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "d19f0c34b259d56d28ddb187b1c2b2cc00e3f85c29a90d538c632db7899123c7",
+    "final_sha256": "47bab561227e903af6faa4597bf52a85410a8f2e2ca12c5292c675d9de14c388",
+    "changed": true
+  },
+  "bomb_release.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 209772,
+        "author": "Johnnyfarmer",
+        "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+        ],
+        "description": "Sound of a metal impact, explosion.",
+        "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+        "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+        ],
+        "title": "Freesound - Metal Boom by Johnnyfarmer",
+        "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea",
+        "key": "metal"
+      },
+      {
+        "id": 262516,
+        "author": "Stereo Surgeon",
+        "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/262/262516_2297168-hq.mp3"
+        ],
+        "description": "A sharp metallic percussion sound from me hitting a sheet of steel with a steel implement.\n\n[Key: ]\n[Format: wav]\n[License: CC 0]",
+        "original_sha256": "357e0f322efbb2e208a3d156dab0eacb02036177713cc5c549e0d54bfd246ac6",
+        "decoded_sha256": "1870c28c08a0719278b0a924e99dc19bc3d837e17172190a64e1c1818a52db55",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-decoded.wav"
+        ],
+        "title": "Freesound - Metal Sheet Hit by Stereo Surgeon",
+        "individual_page_sha256": "7ddfc9de7f66c918d54565faeb7f6f708a53b17c6d63194f75d0dbe7b9b9b453",
+        "key": "sheet"
+      },
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "sheet",
+        "start_s": 0,
+        "output_s": 0.18,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "source": "metal",
+        "start_s": 0.26660997732426306,
+        "output_s": 0.28,
+        "speed": 1,
+        "channel": null
+      }
+    ],
+    "technique": "Fóley de pestillos con interruptor + metal; puertas añaden fricción y viento progresivo; sin pitido",
+    "limitations": "Aproximación mecánica; no motor ni bisagras originales de compuerta B-17",
+    "linear_gain": 1.2540213162740437,
+    "gain_db": 1.966098376807989,
+    "duration_s": 0.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.25,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "c6a2563b43ac9aef7f5916d444469e770f1dc5a419fecfd4a981e20258bc1441",
+    "final_sha256": "1671112c82936ed063286b0c0e54d08ad9527f84542f046b991647ba0e988c7a",
+    "changed": true
+  },
+  "bomb_impact_distant.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 3.0,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.9771495262597878,
+    "gain_db": 5.920790300526438,
+    "duration_s": 3.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -16.91,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "f54bba5e2499dbaa4fe57249451670386452765f640e18545c26c0c23e11a10b",
+    "final_sha256": "626886af2addcb8932c5d7420bf40eec50824d8e0f14767ed923a6c774df0f98",
+    "changed": true
+  },
+  "bomb_secondary_explosions.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.8,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "tnt",
+        "start_s": 2.1706349206349205,
+        "output_s": 1.8,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.8,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "tnt",
+        "start_s": 2.1706349206349205,
+        "output_s": 1.8,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 2.417985570909903,
+    "gain_db": 7.669074098461106,
+    "duration_s": 4.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.08,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "6f1878f61bc2588ca6aec7ef80b1c8fe569b8e688ae6829281d4275944985919",
+    "final_sha256": "a06b548315b930502b18a8288b587c8e25c5048a6388d4dbfb48270005f55b14",
+    "changed": true
+  },
+  "ui_navigate.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.06,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.5414641643104434,
+    "gain_db": 8.101679807023094,
+    "duration_s": 0.06,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -2.03,
+    "previous_sha256": "a791496453ee6232932291d994025ad04232221a11e8ab4bb04a83f6250d157e",
+    "final_sha256": "8f89e0d4aefc21cc4c545d4becda25e8ae76d7a6b1e51ad45b9e6e6e65664ecd",
+    "changed": true
+  },
+  "ui_accept.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.6730610255861973,
+    "gain_db": 8.540177474964695,
+    "duration_s": 0.15,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.23,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "3e04ff1217a9c2629abb08dcec17f2725c305ddc5f935776b6405623c57ccd73",
+    "final_sha256": "0e5cbee6db4a714cf1d3d8c1a7c6445ef26bae8c7f2f9b1a9c08f50324470660",
+    "changed": true
+  },
+  "ui_back.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.06499999999999999,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 3.9990352189823524,
+    "gain_db": 12.039104578506098,
+    "duration_s": 0.15,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -3.89,
+    "previous_sha256": "bf70e8bc7e118e455b8a96a10607e1b6c47ea57ff0e66fc9dd6c43caf93b7439",
+    "final_sha256": "fc9cbbf70e3058d006717fa18c9bafef049dbdd4b464914d7807b2ae5883a144",
+    "changed": true
+  },
+  "ui_pause.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 4.5900699008737424,
+    "gain_db": 13.236385986704231,
+    "duration_s": 0.3,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -2.56,
+    "previous_sha256": "c22b36f935bd5fb74b94479c3702ac2b509eb3ed1aeae59e7c05b2bfa25b0c28",
+    "final_sha256": "4d0256645b518d01c5b3e7790b3a3e1fc1fe83f381345e31160b25cc4668caad",
+    "changed": true
+  },
+  "ui_profile_change.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.065,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.438644004588305,
+    "gain_db": 7.742968124953129,
+    "duration_s": 0.12,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -1.82,
+    "previous_sha256": "cc1538eef5711b81dc6b19dc360e2946126acf7d48a9fee419219858e85320dc",
+    "final_sha256": "da932ed1d2c826dc08f2ccaf6797ddc66bff51fbf1db043015ab736e33fe36a7",
+    "changed": true
+  },
+  "station_switch.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.6707048749099136,
+    "gain_db": 8.53251798296893,
+    "duration_s": 0.25,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -24.4,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "12eb0b6e74b5f5f7579e9aafdae55853f5e6f82c7262edb152ee1ce5329850b5",
+    "final_sha256": "35a90c600f00436a40b2b5471e30bfdb1f3e1f2d4a09cdea53c9f5e309025ad5",
+    "changed": true
+  },
+  "cue_release_tick.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.08,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.7957046865887256,
+    "gain_db": 8.9298258896956,
+    "duration_s": 0.08,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.39,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "186356f3ab435343a700d1607ae9d7dba997fae6f613623194d812b519806e2b",
+    "final_sha256": "6be2fb0ef6fe201d41cacebe95bbbf2a39159abc7a210bcd680a2e9c2ca31045",
+    "changed": true
+  },
+  "cue_release_now.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.6508639327445533,
+    "gain_db": 8.467748724599304,
+    "duration_s": 0.4,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -24.85,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "dc5cf8e18d31fc71ca4352cc22e9d074a2d7a508ba43a0ea9fb41d55a57152bc",
+    "final_sha256": "33e0dd6506839c7d076437ee25651e215550eb45f06be9c0034ea0193174ec79",
+    "changed": true
+  },
+  "cue_course_correction.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.6523759577479864,
+    "gain_db": 8.472701652596857,
+    "duration_s": 0.3,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -25.26,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "c624c45ddd651f5b8f59efb786fabb704c2a8d26129ea9d30b3e7d50fd3cf6d8",
+    "final_sha256": "230616d24038b6baea382a1fcf0404a65f1955fba3c0dab766ff466ab2dd71db",
+    "changed": true
+  },
+  "radio_squelch_open.wav": {
+    "kind": "híbrido grabación/síntesis",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Ruido de banda350–2700 con fluctuación aperiódica, chasquidos y saturación tanh suave; interruptor grabado en squelch",
+    "limitations": "Solo estática y squelch, sin mensajes hablados",
+    "linear_gain": 0.5863313370446556,
+    "gain_db": -4.637137878136563,
+    "duration_s": 0.25,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -8.66,
+    "previous_sha256": "792761a9902ac42c1c459f46dbed67c7233b7f232c56ce229ee77894f0efca4b",
+    "final_sha256": "12f2b503d0ad8b9abe401dbe257d9a9da23ebad4b8d938ef8e646a01c097ce1f",
+    "changed": true
+  },
+  "radio_squelch_close.wav": {
+    "kind": "híbrido grabación/síntesis",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.06,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Ruido de banda350–2700 con fluctuación aperiódica, chasquidos y saturación tanh suave; interruptor grabado en squelch",
+    "limitations": "Solo estática y squelch, sin mensajes hablados",
+    "linear_gain": 0.3838452484543137,
+    "gain_db": -8.316876621415911,
+    "duration_s": 0.2,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -11.77,
+    "previous_sha256": "5c21761ccdbb75a06ab96c8a607345a4d7f7024699a059ea55a5e170ddacecf0",
+    "final_sha256": "4da43f3d916bef0d3914ea2c506f214547a057a9a67d83a05824f6243907e5da",
+    "changed": true
+  },
+  "radio_static_loop.wav": {
+    "kind": "síntesis",
+    "sources": [],
+    "cuts": [
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 69506
+      }
+    ],
+    "technique": "Ruido de banda350–2700 con fluctuación aperiódica, chasquidos y saturación tanh suave; interruptor grabado en squelch",
+    "limitations": "Solo estática y squelch, sin mensajes hablados",
+    "linear_gain": 0.4749456720576818,
+    "gain_db": -6.467121309606282,
+    "duration_s": 4.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -22.0,
+    "peak_dbfs": -9.53,
+    "previous_sha256": "2365a1a33940fd4bba195866f5694c7b052942d2eaf9cdd817dc284c62ccf534",
+    "final_sha256": "45bb4d082b5ff76edbf562fe05c6941fc8f30e8fc02e90ffa0de72d05f8342f4",
+    "changed": true
+  },
+  "stinger_mission_complete.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      },
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      },
+      {
+        "id": 146914,
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+        ],
+        "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+        "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+        "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+        ],
+        "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+        "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1",
+        "key": "wind"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "wind",
+        "start_s": 45,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "radial",
+        "start_s": 33,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "wind",
+        "start_s": 50,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "radial",
+        "start_s": 34,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Cierre ambiental4s: aire + alejamiento radial + conmutador; fracaso se apaga más rápido y más filtrado",
+    "limitations": "Sin música ni voces; lectura emocional pendiente de escucha",
+    "linear_gain": 0.19628382070728442,
+    "gain_db": -14.142309939444914,
+    "duration_s": 4.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -2.12,
+    "previous_sha256": "41412ff1e777e1d112305f642518ab370eae265b77432540babfe1e111ea444f",
+    "final_sha256": "f7087aeaa8b155d95685b699d8ad97f9e8851985e547bb5ba4b3c49e4c0d51a1",
+    "changed": true
+  },
+  "stinger_mission_failed.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      },
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      },
+      {
+        "id": 146914,
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+        ],
+        "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+        "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+        "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+        ],
+        "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+        "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1",
+        "key": "wind"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "wind",
+        "start_s": 45,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "radial",
+        "start_s": 33,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "wind",
+        "start_s": 50,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "radial",
+        "start_s": 34,
+        "output_s": 4.0,
+        "speed": 1,
+        "channel": 1
+      },
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Cierre ambiental4s: aire + alejamiento radial + conmutador; fracaso se apaga más rápido y más filtrado",
+    "limitations": "Sin música ni voces; lectura emocional pendiente de escucha",
+    "linear_gain": 0.23205846119735318,
+    "gain_db": -12.68805183864362,
+    "duration_s": 4.0,
+    "channels": 2,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.33,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "495d6cc3f753e6263846347332a91f8b2ef5ff4c4763121105eb654e84870cfb",
+    "final_sha256": "498dc5295876991e642632a604e3e908a679d176b08052983753c67dc759f099",
+    "changed": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": 676385,
+  "author": "StevenMyat_",
+  "url": "https://freesound.org/people/StevenMyat_/sounds/676385/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/676/676385_14682249-hq.mp3"
+  ],
+  "description": "Camp fire Crackling",
+  "original_sha256": "aba832af7fdc78ddeb3961c3aa5ed3b0ab0f3c9a0d2762161eab7e0d2ba7c9a8",
+  "decoded_sha256": "95c7281c232be0eaa28031a240ab7a58daddad09de2e4a1ecc97b163fdfefaf5",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/fire-decoded.wav"
+  ],
+  "title": "Freesound - Fire Crackling by StevenMyat_",
+  "individual_page_sha256": "3f881fbfc5627e257f47f9b4b2e4d524965f836ed7a98fce04490c510c6b17b4"
+}

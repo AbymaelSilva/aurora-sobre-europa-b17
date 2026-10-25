@@ -1,0 +1,36 @@
+{
+  "id": 256049,
+  "author": "YleArkisto",
+  "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+  "license": [
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+  ],
+  "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+  "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+  "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+  ],
+  "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+  "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a"
+}

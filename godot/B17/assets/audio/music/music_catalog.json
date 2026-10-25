@@ -1,0 +1,51 @@
+{
+  "formation": {
+    "file": "formation_loop.wav",
+    "duration": 32.0,
+    "loop": true,
+    "sha256": "48d61f7731a28e48e8a2f1c8ca569f28d0160245427d008d16b1c047046d1a64",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "approach": {
+    "file": "approach_loop.wav",
+    "duration": 32.0,
+    "loop": true,
+    "sha256": "d697b677ca973d4de04b78085899188dd39678d7796f34209be8a7070c93cd0d",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "combat": {
+    "file": "combat_loop.wav",
+    "duration": 32.0,
+    "loop": true,
+    "sha256": "572ab1df285d1e84f80fc8c6851a37bb1dcf43fdd767438a4c7995d5a85fe391",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "bombing": {
+    "file": "bombing_loop.wav",
+    "duration": 32.0,
+    "loop": true,
+    "sha256": "167976e94a4538a6d2ac3738e51d56b0663e7f1a59554ab1ef3ca1750f44c013",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "return": {
+    "file": "return_loop.wav",
+    "duration": 32.0,
+    "loop": true,
+    "sha256": "89bdaf74ff7f8699ce3597d8143f5a7b6b47ae65e4c4ef14888bf9db1771ff53",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "complete": {
+    "file": "complete.wav",
+    "duration": 16.0,
+    "loop": false,
+    "sha256": "c1305b1831e0a2b863597c3b5477fcd1e95cef952dda15474bb85908a0ec7b02",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  },
+  "failed": {
+    "file": "failed.wav",
+    "duration": 12.0,
+    "loop": false,
+    "sha256": "3dbed354ee33de0ed938ab5912d768980c829555a984c32b90e2a9d21353d498",
+    "composition": "Original Codex; chamber orchestral instruments rendered with FluidSynth + TimGM6mb"
+  }
+}

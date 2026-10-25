@@ -1,0 +1,439 @@
+# Revisión técnica de la propuesta del juego B-17 (Windows / ROG Ally X)
+
+**Alcance de esta revisión:** reviso el texto de la propuesta y los datos que me has pasado. No he ejecutado nada ni he usado herramientas. Lo que marco como "verificar" sigue sin confirmar.
+
+---
+
+## 0. Correcciones a las premisas antes de empezar
+
+1. **"Qwen2.5-5B" no coincide con ningún tamaño de Qwen2.5 que yo conozca.** Lo que encontraste es otro modelo: `qwen2.5-coder:7b-instruct-q4_K_M` (7,6B parámetros, cuantizado Q4_K_M). Hay que confirmar que es el modelo que piensas usar. Si lo es, cambia el documento para que diga 7B Coder Instruct Q4_K_M y no "5B".
+2. **Hay dos máquinas descritas que no encajan:**
+   - Tú declaras un ASUS con RTX 2060 SUPER.
+   - El entorno inspeccionado es Linux con i5-12490F y 14 GiB de RAM.
+   - El sufijo "F" significa que el procesador no tiene gráfica integrada, así que tiene que haber una GPU dedicada. Eso cuadra, pero no demuestra que sea una 2060 SUPER.
+   - Faltan por confirmar el modelo de GPU, el driver, Vulkan/CUDA, la VRAM real y el espacio libre en disco.
+3. **Desarrollas en Linux para un juego de Windows.** Exportar desde Linux es posible en Godot y en Unity, pero la validación tiene que hacerse en Windows: en la propia Ally X o en otra máquina con Windows. Ningún resultado medido en Linux se puede trasladar a la Ally X.
+4. **El modelo está en un disco extraíble** (`/run/media/.../38340C17340BD6B2`, con una etiqueta que parece de una partición NTFS). Si el disco no está montado, el lanzador falla. Además, los permisos y la velocidad de lectura afectan al tiempo de carga del modelo.
+5. **El puerto 127.0.0.1:11435 no es el puerto por defecto de Ollama, que es el 11434.** Hay que verificar:
+   - qué binario arranca el lanzador;
+   - de qué ruta lee los modelos;
+   - si descarga capas en la GPU;
+   - qué ventana de contexto (`num_ctx`) usa en la práctica.
+
+   No supongas que usa la ventana máxima del modelo.
+6. **Riesgos de propiedad intelectual y legales en "inspirado en Masters of the Air":**
+   - La historia original está bien.
+   - Evita nombres, personajes, emblemas de escuadrón, diálogos o planos reconocibles de la serie.
+   - No uses fotogramas de la serie como referencia en OpenArt ni en Meshy.
+   - Revisa dos cosas aparte:
+     - el uso del nombre y la forma del B-17 por posibles marcas registradas, consultando a alguien que sepa del tema;
+     - la simbología de la Luftwaffe en los cazas, por normativas regionales y políticas de las tiendas.
+7. **¿El proyecto es comercial o personal?** No se dice, y cambia la evaluación de licencias del motor, de OpenArt, de Meshy y del audio.
+8. **El directorio de planificación no es un repositorio git.** Sin control de versiones no se puede saber qué código escribió Qwen ni revisar diffs. Es fácil de arreglar, pero hay que hacerlo antes de escribir la primera línea.
+9. **Los créditos (1378 en OpenArt y 1200 en Meshy) son una foto del momento de la consulta**, no un presupuesto. No se conoce el coste por generación con la configuración que usaríais.
+
+---
+
+## 1. Bloqueantes reales y decisiones que se pueden tomar por defecto
+
+### Bloqueantes reales (nada de código de juego hasta resolverlos)
+
+| # | Bloqueante | Por qué bloquea | Cómo se cierra (criterio observable) |
+|---|---|---|---|
+| B1 | Inferencia de Qwen sin probar | Todo el plan depende de que Qwen sea el autor principal | El servidor responde en 11435. Una petición fija devuelve una respuesta coherente. Se registran tokens/s, VRAM usada, `num_ctx` efectivo y si hubo descarga parcial a CPU. Se repite con el disco recién montado tras reiniciar. |
+| B2 | Hardware de desarrollo sin validar | Afecta a si el editor del motor y el LLM caben a la vez (14 GiB de RAM con dos procesos pesados) | Inventario: GPU y driver, VRAM, disco libre, y confirmar si esta máquina es la definitiva. Prueba: editor del motor abierto y Qwen generando al mismo tiempo, sin swap fuerte. |
+| B3 | Camino de prueba en Windows / Ally X | El destino es Windows y se desarrolla en Linux | Una escena vacía exportada desde Linux arranca en la Ally X y el mando se detecta. |
+| B4 | Motor sin decidir | Los contratos, el lenguaje y los tests dependen del motor | La comparación pequeña y equivalente del apartado 2. |
+| B5 | Control de versiones y regla de autoría | Sin ellos no se puede medir ni revisar la autoría de Qwen | git iniciado y una convención de commits que identifique al autor (Qwen / Codex / humano). |
+| B6 | Uso comercial o personal | Condiciona qué recursos se pueden usar | Tu decisión explícita. No bloquea el greybox, pero sí cualquier recurso que vaya al juego final. |
+
+### Decisiones que se pueden tomar por defecto (se revisan más adelante si hace falta)
+
+- **Unidades:** SI internamente (m, m/s, rad, kg). Nudos y pies solo en la interfaz.
+- **Física:** paso fijo; el resto del juego en paso variable.
+- **Modelo de vuelo:** simplificado, en un punto intermedio entre arcade y simulación. Sin aerodinámica por superficies.
+- **Variante del avión:** una sola, por defecto B-17G. Hay que congelar qué torretas tiene esa variante.
+- **Torreta jugable:** una sola, por defecto la superior. Tiene mejor campo de visión y la cámara es más simple que la ventral (ball turret).
+- **Controles:** pensados primero para mando. Teclado y ratón son opcionales.
+- **Misión:** con guion fijo y semilla configurable. No se guarda a mitad de misión.
+- **Formación:** de 3 a 6 aviones aliados controlados por IA, con mantenimiento de posición asistido para el jugador.
+- **Bombardeo:** el del jugador, con una ayuda opcional que sigue al avión líder. En la realidad, la formación soltaba sus bombas a la señal del líder.
+- **Puestos que el jugador no ocupa:** los controla una IA simple con reglas, no simulación.
+- **Idioma:** textos de la interfaz externalizados desde el primer día.
+- **Arte:** greybox hasta el hito 5.
+
+---
+
+## 2. Comparación provisional de motores
+
+No cito versiones ni condiciones de licencia actuales. Hay que comprobarlas en las fuentes oficiales en el momento de decidir.
+
+| Criterio | Godot / GDScript (o C#) | Unity / C# | Unreal |
+|---|---|---|---|
+| Peso del editor en 14 GiB de RAM junto al LLM | Bajo | Medio | Alto. Mal encaje con la máquina actual |
+| Editor en Linux | Se usa con normalidad en Linux | Existe, pero hay que verificar el soporte en tu distribución | Existe, menos rodado. Compilación pesada |
+| Exportar a Windows desde Linux | Plantillas de exportación, flujo directo | Posible con el módulo de compilación para Windows (verificar) | Más fricción |
+| Lo que tendría que escribir un LLM pequeño | GDScript es un lenguaje corto, pero la API cambió entre Godot 3 y 4. Riesgo: mezclar APIs antiguas y nuevas | C# es un lenguaje general. Riesgo: APIs obsoletas (sistema de entrada antiguo frente al nuevo, componentes deprecados) | C++ con macros del motor, más Blueprints, que no son texto. Mal encaje con Qwen |
+| Archivos de escena editables por el LLM | `.tscn` / `.tres` en texto, frágiles pero legibles | YAML con GUIDs y archivos `.meta`, muy frágiles. Mejor construir escenas con scripts del editor o a mano | No es viable |
+| Tests sin interfaz (headless) | Posibles mediante herramientas de terceros o scripts headless (verificar) | Unity Test Framework en batchmode (verificar en Linux) | Posibles, pero pesados |
+| Ciclo editar → probar | Rápido | Recargas de dominio y compilación más lentas (medir) | Lento |
+| Licencia | Licencia permisiva | Revisar términos vigentes: hubo cambios en el pasado y no supongo los actuales | Revisar regalías vigentes |
+| Ecosistema para un juego de este tipo | Menor | Mayor (tutoriales, paquetes) | Mayor en calidad visual, que aquí no es la prioridad |
+
+**Conclusión provisional:**
+- Unreal queda descartado por escala, por la máquina y por el codificador.
+- Unity/C# y Godot/GDScript son candidatos reales.
+- Tu pregunta "¿por qué no Unity?" es válida. No hay base para descartarlo sin medir.
+- Tampoco hay base para afirmar que Qwen 7B rinde mejor en C# o en GDScript. Eso es justo lo que hay que medir.
+
+### Comparación pequeña y equivalente (cierra B4)
+
+- **Cuándo:** se ejecuta después de B1–B3.
+- **Mismas condiciones:**
+  - mismo modelo, cuantización y `num_ctx`;
+  - misma temperatura y semilla, si el servidor la admite;
+  - las mismas 4–5 especificaciones, escritas de forma neutra respecto al motor;
+  - 3 intentos independientes por tarea y motor;
+  - un máximo de 2 rondas de corrección con feedback textual de Claude. Nadie toca el código.
+- **Tareas:**
+  1. Función pura de modelado de entrada (zona muerta y curva) con sus tests.
+  2. Integrador del modelo de vuelo simplificado como lógica pura con tests, sin nodos del motor.
+  3. Componente que conecta ese integrador a un cuerpo del motor con paso fijo.
+  4. Cámara de persecución con suavizado y cambio a una segunda cámara.
+  5. Mapeo de acciones del mando.
+- **Métricas, anotadas en una tabla:**
+  - % de intentos que compilan o pasan el analizador a la primera;
+  - % de tests que pasan;
+  - rondas de corrección necesarias;
+  - número de llamadas a APIs inexistentes u obsoletas;
+  - tiempo humano de revisión;
+  - latencia y tokens por tarea;
+  - tiempo de ciclo editar → probar;
+  - fricción al exportar a Windows (pasos y errores);
+  - tamaño de la build;
+  - frametime de la escena 3 en la Ally X (solo como sanidad, no como objetivo).
+- **Regla de decisión:** fíjala antes de mirar los resultados. Por ejemplo: gana el motor con más tareas aceptadas sin edición humana; en caso de empate, el que tenga menos fricción de exportación y de ciclo.
+- **Advertencia:** con 5 tareas × 3 intentos la muestra es pequeña. El resultado sirve para orientar la decisión, no es concluyente.
+
+---
+
+## 3. Arquitectura mínima modular
+
+### Principios
+
+- **Separar lógica y motor.** La lógica pura (modelo de vuelo, balística, daños, máquina de estados de la misión) va sin dependencias del motor y con tests. Los adaptadores finos conectan esa lógica con nodos o componentes. Así Qwen trabaja en archivos pequeños y verificables.
+- **Comunicación entre módulos** solo mediante contratos (tipos de datos más eventos o señales). Nada de buscar nodos por ruta en el árbol de escena.
+- **Un archivo por responsabilidad**, con un tamaño máximo orientativo de ~200–300 líneas para que quepa en el contexto de Qwen.
+
+### Módulos y contratos (descritos, sin código)
+
+| Módulo | Responsabilidad | Contrato de entrada | Contrato de salida |
+|---|---|---|---|
+| Core / Convenciones | Unidades, ejes, paso fijo, configuración, bus de eventos | — | Constantes y eventos tipados |
+| Input | Acciones del mando, zona muerta, curvas, reasignación de controles | Dispositivo físico | `ControlInput`: alabeo, cabeceo y guiñada en [-1,1]; potencia por motor ×4 en [0,1]; acciones discretas |
+| FlightModel (puro) | Integrar el estado a partir de entradas y modificadores de daño | `ControlInput`, `AircraftState`, `DamageModifiers`, dt | Nuevo `AircraftState` |
+| AircraftBody (adaptador) | Aplicar el estado o las fuerzas al motor del juego | `AircraftState` | Transformación en la escena |
+| Autopilot / Formation | Mantener rumbo, altitud y posición relativa al líder | `AircraftState` propio y del líder, objetivo | `ControlInput` sintético |
+| StationManager | Puesto activo y cesión del resto a la IA | Acción "cambiar puesto" | `StationId` activo y evento `StationChanged` |
+| CameraRig | Cámaras de persecución, cabina, torreta y mira | `StationId`, transformaciones | Cámara activa |
+| Bombsight | Imagen de la mira, cálculo del punto de suelta, suelta | `AircraftState`, ajustes de la mira | `BombReleased(posición, velocidad)` |
+| Ballistics (puro) | Trayectoria de bombas y proyectiles | Estado inicial, dt | Posiciones e impacto |
+| Turret | Apuntado con límites angulares, cadencia, munición y calentamiento | Entrada del jugador o de la IA | `ShotFired` |
+| DamageModel (puro) | Salud por componente y efectos | `DamageEvent(component_id, amount, source)` | `DamageModifiers` (empuje por motor, eficacia de superficies, torreta operativa) y eventos de estado |
+| EnemyFighters | Pasadas de ataque con reglas | Posición de la formación | Cazas y disparos |
+| Flak | Zonas y probabilidad de ráfaga | Posición del avión, semilla | `DamageEvent` y efectos |
+| Mission | Máquina de estados de fases, disparadores, victoria y derrota | Eventos del juego | `MissionPhase`, objetivos |
+| HUD / UI | Telemetría, indicadores, menús | Estados públicos | — |
+| Audio | Buses y eventos de sonido | Eventos | — |
+
+### Convenciones que hay que congelar al cerrar el motor
+
+- Eje "adelante" del motor (Godot y Unity difieren).
+- Identificadores de componentes de daño compartidos entre código, hitboxes y modelos 3D (por ejemplo `engine_1..4`, `elevator`, `rudder`, `aileron_l/r`, `turret_top`).
+- Semilla global para que las pruebas sean reproducibles.
+
+### Orden de dependencias para Qwen
+
+1. Core, convenciones y harness de tests
+2. Input
+3. FlightModel (puro)
+4. AircraftBody
+5. CameraRig (persecución)
+6. Autopilot
+7. StationManager
+8. Ballistics
+9. Bombsight
+10. Turret
+11. DamageModel, y su conexión con FlightModel mediante `DamageModifiers`
+12. EnemyFighters
+13. Flak
+14. Formation (reutiliza FlightModel y Autopilot)
+15. Mission
+16. HUD
+17. Audio (eventos)
+18. Integración del arte
+
+---
+
+## 4. Hitos con criterios de aceptación observables
+
+Los umbrales numéricos son propuestas para ajustar. Todos se comprueban en una build de Windows en la Ally X, salvo que se indique otra cosa.
+
+**H0 – Entorno verificado.**
+- B1–B6 cerrados.
+- Escena vacía en la Ally X con el mando detectado.
+- Comparación de motores hecha y decisión registrada.
+
+**H1 – Vuelo, cámara y mando.**
+- Con el mando, el jugador mantiene el vuelo nivelado (±50 m de altitud, ±5° de rumbo) durante 2 minutos sin oscilaciones divergentes.
+- Una pérdida de sustentación a baja velocidad produce un comportamiento definido y recuperable.
+- Una simulación sin interfaz de 10 minutos con entradas aleatorias no produce NaN ni infinitos, con paso fijo y con variaciones del frame.
+- Telemetría en pantalla: velocidad indicada, altitud, rumbo y potencia ×4.
+- La cámara de persecución no atraviesa el avión y el cambio de cámara no produce saltos visibles.
+- La zona muerta y la sensibilidad se pueden configurar desde un menú.
+
+**H2 – Puestos y bombardeo.**
+- Un botón alterna entre piloto, torreta y mira.
+- Al salir del puesto de piloto, el autopiloto mantiene la altitud y el rumbo dentro de la tolerancia de H1.
+- Contra un blanco fijo, sin viento y desde una altitud y velocidad dadas, el error medio de impacto en 20 sueltas con semilla fija queda por debajo de un umbral acordado.
+- Los resultados son reproducibles con la misma semilla.
+- La torreta respeta sus límites angulares y no apunta contra el propio avión.
+
+**H3 – Combate.**
+- De 1 a 4 cazas hacen pasadas de ataque.
+- Los impactos de la torreta registran daño en el caza.
+- Un `DamageEvent` sobre `engine_2` reduce el empuje de ese motor de forma visible en la telemetría y produce el efecto de guiñada esperado.
+- Si se pierde un timón u otra superficie, la autoridad del eje se degrada sin volverse incontrolable salvo por diseño.
+- Una zona de flak genera ráfagas con la probabilidad configurada.
+
+**H4 – Misión completa.**
+- Bucle de 15 minutos (±2) con fases visibles: formación, cazas, flak, aproximación, bombardeo y regreso.
+- Condiciones de victoria y derrota.
+- Tras 3 reinicios seguidos, el consumo de memoria no crece de forma sostenida.
+- Formación de N aviones con LOD.
+
+**H5 – Arte y audio.**
+- El greybox se sustituye por recursos que cumplen el checklist del apartado 6 y el presupuesto medido en el apartado 7.
+- Los eventos de audio cubren la lista del apartado 8.
+- Cada recurso tiene su registro de procedencia.
+
+---
+
+## 5. Ejemplo de encargo pequeño a Qwen (sin implementar)
+
+- **Título:** modelado de un eje del mando para el piloto.
+- **Objetivo:** convertir el valor bruto de un eje en un valor modelado, con zona muerta y curva exponencial configurables.
+- **Contexto que se le pasa:**
+  - convenciones: rangos en [-1,1], sin dependencias del motor salvo el lenguaje;
+  - este encargo completo;
+  - nada más del proyecto.
+- **Archivos permitidos:**
+  - crear `input/axis_shaping` (extensión según el motor);
+  - crear `tests/input/test_axis_shaping`;
+  - no puede tocar ningún otro archivo, añadir dependencias ni modificar la configuración.
+- **Entradas:**
+  - `raw`: número real que se espera en [-1,1];
+  - `deadzone`: número en [0, 0,5];
+  - `expo`: número en [0,1], donde 0 es lineal.
+- **Salida:** número en [-1,1].
+- **Comportamiento:**
+  - por debajo de la zona muerta, devuelve 0;
+  - por encima, reescala de forma continua desde 0 en el borde hasta 1 en el extremo, y después aplica la curva;
+  - conserva el signo.
+- **Casos límite que deben estar cubiertos por tests:**
+  - `raw` fuera de rango (1,05 por ruido del hardware) se recorta;
+  - `raw` NaN devuelve 0 y no propaga el error;
+  - `deadzone = 0`;
+  - `deadzone` en el máximo permitido: sin división por cero;
+  - `deadzone` fuera de rango se recorta al rango válido;
+  - continuidad en el borde de la zona muerta (no hay salto);
+  - monotonía: si la entrada crece, la salida no decrece;
+  - simetría: f(-x) = -f(x);
+  - `expo = 0` es exactamente lineal tras la zona muerta;
+  - los extremos ±1 dan ±1.
+- **Formato de respuesta:**
+  - solo el contenido de los dos archivos;
+  - una lista de las suposiciones que haya hecho;
+  - sin explicaciones largas.
+- **Comprobación:**
+  - el analizador o la compilación pasan;
+  - los tests se ejecutan sin interfaz y pasan;
+  - Claude revisa el diff: que la API usada exista en la versión del motor elegida, que no haya archivos extra y que los tests no sean triviales;
+  - si falla, el feedback vuelve a Qwen en texto y nadie corrige el código por él.
+
+---
+
+## 6. Flujo OpenArt → Meshy
+
+### Distinguir dos tipos de recurso
+
+- **Concepto visual:** paleta, ambiente, iluminación, composición de cielos, marcas originales de la unidad ficticia y estilo de la interfaz. Aquí OpenArt encaja bien.
+- **Recurso funcional:** malla con piezas separadas, pivotes, escala, colisiones, hitboxes, LOD y materiales PBR. Una imagen generada no es un recurso funcional. Una malla generada desde imagen casi nunca lo es sin rehacer trabajo.
+
+### Problemas esperables (hay que verificarlos con una prueba, no suponerlos)
+
+- **Vistas inconsistentes.** Un modelo de imagen no garantiza que la vista frontal, lateral y superior coincidan entre sí. Un objeto 3D generado a partir de ellas hereda esas incoherencias.
+- **Geometría histórica.** Errores típicos: número y posición de motores, torretas que no corresponden a la variante, forma de la deriva, morro de la G frente a la F, ventanas de la cintura.
+  - Para la geometría usa referencias históricas fiables con licencia verificada. Muchas fotos y planos son de dominio público, pero se comprueba fuente por fuente.
+  - La envergadura y la longitud se toman de una fuente documentada, no de una imagen generada.
+- **Malla fundida** (avión + hélices + superficies en una sola pieza), topología densa, escala arbitraria, pivote en el centroide e iluminación "horneada" en la textura.
+
+### Recomendación
+
+- **El B-17 principal** se hace por modelado manual o semimanual (por ejemplo en Blender) sobre un blockout a escala real. Las imágenes de OpenArt sirven solo como referencia de acabado.
+- **Meshy** se prueba para recursos secundarios y lejanos: edificios del complejo ferroviario, vagones, cajas, vehículos en tierra. Cada uno pasa el checklist.
+
+### Checklist del recurso funcional
+
+- **Escala:** 1 unidad = 1 m; ejes según la convención del motor; origen definido.
+- **Hélices:** 4 objetos separados, con el pivote en el buje, el eje de giro alineado y una variante de disco difuminado para altas RPM.
+- **Superficies de control** (alerones, elevadores, timón) separadas y con el pivote en la bisagra.
+- **Torretas:** pivote de guiñada en la base y pivote de cabeceo en las armas. Puertas de la bodega de bombas separadas.
+- **Colisiones:** primitivas o cascos convexos, no la malla de render.
+- **Hitboxes:** nombradas con los mismos `component_id` que el modelo de daños.
+- **Estados de daño:** piezas o materiales alternativos (motor dañado, humo y fuego como efectos, no como malla).
+- **Materiales:** PBR, sin luz horneada, densidad de texel coherente y número de materiales limitado.
+- **LOD:** LOD0–LOD2 más un impostor para los miembros lejanos de la formación. Los presupuestos de triángulos se fijan después de medir (apartado 7).
+- **Nombres:** convención fija para que el código encuentre las piezas sin depender de su posición en la jerarquía.
+
+### Licencias y procedencia
+
+- Por cada recurso se registra en un manifiesto:
+  - herramienta y modelo;
+  - fecha;
+  - plan contratado;
+  - prompt y entradas;
+  - créditos gastados;
+  - versión de los términos de uso que se consultaron.
+- Lee los términos de uso comercial de OpenArt y Meshy para tu plan. No los doy por buenos.
+- No subas material con derechos de terceros como referencia.
+- Antes de gastar créditos:
+  - estimación de coste de cada generación;
+  - prueba piloto con un recurso;
+  - tu aprobación explícita.
+- **La clave de Meshy** va en un almacén de secretos o en una variable de entorno. Nunca en el repositorio, en prompts ni en registros.
+
+---
+
+## 7. Rendimiento a medir en la Ally X (sin prometer FPS)
+
+**Condiciones que se registran en cada medición:**
+- modo de energía o TDP;
+- conectada o con batería;
+- resolución de render y escalado;
+- versión de la build;
+- versión del driver;
+- temperatura ambiente aproximada.
+
+### Escenas de prueba, repetibles y con semilla
+
+1. Escena vacía (línea base).
+2. Vuelo sobre terreno con cielo y nubes.
+3. Formación con N bombarderos y LOD, variando N (por ejemplo 3, 6, 12) para encontrar el punto de inflexión.
+4. Estrés de combate: cazas, trazadoras, ráfagas de flak, humo y fuego.
+5. Pasada de bombardeo sobre el complejo ferroviario: muchos objetos en tierra y explosiones.
+6. Misión completa de 15 minutos como prueba de resistencia (soak test).
+
+### Métricas
+
+- **Frametime:** media, percentiles 1 % y 0,1 %, picos y tirones (hitches).
+- **CPU:** tiempo del hilo principal frente al de render.
+- **GPU:** tiempo de GPU.
+- **Geometría:** draw calls y triángulos.
+- **Memoria:** uso de la memoria compartida de la APU y RAM del proceso.
+- **Tirones por compilación de shaders** la primera vez frente a con caché.
+- **Tiempos de carga.**
+- **Batería y temperatura:** consumo de batería por misión, temperatura y throttling en la escena 6.
+- **Latencia del mando:** percepción subjetiva más una prueba simple.
+
+**Herramientas:**
+- el profiler del motor;
+- en Windows, una herramienta de captura de frametime (verificar cuál funciona en la Ally X).
+
+**Regla:** los presupuestos (triángulos, materiales, partículas, número de cazas) se fijan a partir de estas mediciones. No se fijan antes.
+
+---
+
+## 8. Audio: qué falta y cómo verificar herramientas
+
+La propuesta no menciona audio, y en este género es la mitad de la tensión.
+
+**Lista mínima de sonidos:**
+- 4 motores radiales con capas según RPM, variantes con daño y fallo, y hélice en bandera;
+- viento y estructura del avión;
+- ametralladoras de calibre .50 y motor de la torreta;
+- ráfagas de flak cercanas y lejanas, e impactos de metralla;
+- cazas de pasada con efecto Doppler;
+- puertas de la bodega, suelta de bombas y explosiones lejanas;
+- alarmas;
+- intercomunicador de la tripulación, que vende la historia;
+- música e interfaz.
+
+**Técnico:**
+- audio espacial, prioridad de voces y ducking cuando habla el intercomunicador;
+- buses de mezcla;
+- subtítulos y avisos visuales para accesibilidad.
+
+**Voces:**
+- guion original;
+- actores con contrato o síntesis con licencia clara;
+- no clonar voces de personas reales.
+
+### Verificar una herramienta antes de atribuirle generación de sonido
+
+- Ni OpenArt ni Meshy están confirmados como generadores de audio en esta propuesta. No lo supongas.
+- Pasos:
+  1. Consultar la lista oficial de modelos y modos de la herramienta.
+  2. Hacer una única prueba con coste estimado y aprobado.
+  3. Comprobar formato, frecuencia de muestreo, duración, si el sonido puede repetirse en bucle sin cortes y si separa capas.
+  4. Leer los términos de uso comercial del audio.
+  5. Registrar la procedencia igual que en el apartado 6.
+- Alternativa segura: bibliotecas de efectos con licencia verificada (CC0 o comercial) más grabaciones propias.
+
+---
+
+## 9. Riesgos, revisión y autoría de Qwen
+
+### Riesgos de alcance, de mayor a menor
+
+1. **Formación y vuelo asistido.** Mantener la posición en formación con un mando es difícil de ajustar bien.
+2. **IA de cazas creíble.** Pasadas que generen tensión sin ser injustas.
+3. **Deriva hacia la simulación** en el modelo de vuelo y en el de daños ("solo un sistema más").
+4. **El B-17 como recurso principal:** el coste de modelado se subestima casi siempre.
+5. **Compresión de la misión a 15 minutos:** el ritmo hay que diseñarlo, no sale solo.
+6. **Distancia entre desarrollar en Linux y ejecutar en Windows / Ally X.**
+7. **Límites de Qwen 7B Q4:**
+   - contexto efectivo;
+   - pérdida de calidad por la cuantización;
+   - APIs inventadas u obsoletas;
+   - tiempo de inferencia si no cabe entero en la VRAM.
+8. **Coste de coordinar tres IAs:** el traspaso de contexto se pierde y cuesta tu tiempo.
+9. **Créditos:** se gastan en recursos que luego no sirven.
+
+### Mecanismos de revisión
+
+- Tareas atómicas: un módulo, 1–2 archivos y tests incluidos en la especificación.
+- Puerta automática: analizador o compilación más tests sin interfaz antes de cualquier revisión humana o de Claude.
+- Checklist de Claude en cada diff:
+  - la API existe en la versión del motor;
+  - se respetan los contratos y las unidades;
+  - no hay archivos fuera del permiso;
+  - los casos límite están cubiertos;
+  - los tests no se han debilitado.
+- Los tests de aceptación de cada tarea se congelan antes de que Qwen implemente. Qwen no puede modificarlos para hacerlos pasar; si cree que un test está mal, lo argumenta.
+- Prueba en la Ally X al final de cada hito, no solo al final del proyecto.
+
+### Mantener a Qwen como autor principal sin aceptar errores
+
+- **Roles:**
+  - Codex escribe especificaciones, integra y ejecuta las puertas automáticas, pero no escribe código de producción;
+  - el código de unión ("glue") también se encarga a Qwen como tarea;
+  - Claude revisa y devuelve feedback en texto;
+  - tú tienes la última palabra para integrar cambios.
+- **Corrección:** ante un fallo, el feedback se le devuelve a Qwen. Tras 2–3 rondas fallidas, la tarea se divide o se le da un esqueleto de firmas, nunca la implementación.
+- **Registro de excepciones:** cualquier línea escrita por Codex, Claude o una persona va en commits marcados. Se mide el % de líneas aceptadas cuyo autor es Qwen y las rondas por tarea.
+- **Si el porcentaje cae de forma sostenida,** el plan de "Qwen como autor principal" se revisa de forma explícita. No se maquilla.
+
+---
+
+**En resumen:** la propuesta es viable como prototipo de alcance reducido, pero todavía no es un plan validado. Lo primero es demostrar que Qwen funciona de verdad en local (B1), que hay un camino de prueba en Windows y la Ally X (B3) y elegir motor con la comparación equivalente entre Unity/C# y Godot/GDScript (B4). Hasta que esas tres cosas estén medidas, cualquier estimación de esfuerzo o de rendimiento sería inventada.

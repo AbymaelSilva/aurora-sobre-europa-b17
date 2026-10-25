@@ -1,0 +1,36 @@
+{
+  "id": 209772,
+  "author": "Johnnyfarmer",
+  "url": "https://freesound.org/people/Johnnyfarmer/sounds/209772/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/209/209772_2012390-hq.mp3"
+  ],
+  "description": "Sound of a metal impact, explosion.",
+  "original_sha256": "3e1684c2aefd70c429fd8ba0e761380eaeb23f810a3a485a2375fe44274a445e",
+  "decoded_sha256": "468b4a431f6f081215836e09f1bc8203bd35942d929c76f552e3b17d1b11a7a1",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/metal-decoded.wav"
+  ],
+  "title": "Freesound - Metal Boom by Johnnyfarmer",
+  "individual_page_sha256": "daea91931b4d90ac3a67b4814ea7c1858cbcde47b23ceff626802ee9e33187ea"
+}

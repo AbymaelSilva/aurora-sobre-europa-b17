@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz",
+    "path": "tools_voice/piper_linux_x86_64.tar.gz",
+    "sha256": "a50cb45f355b7af1f6d758c1b360717877ba0a398cc8cbe6d2a7a3a26e225992"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_ES/davefx/medium/es_ES-davefx-medium.onnx",
+    "path": "tools_voice/es_ES-davefx-medium.onnx",
+    "sha256": "6658b03b1a6c316ee4c265a9896abc1393353c2d9e1bca7d66c2c442e222a917"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_ES/davefx/medium/es_ES-davefx-medium.onnx.json",
+    "path": "tools_voice/es_ES-davefx-medium.onnx.json",
+    "sha256": "0e0dda87c732f6f38771ff274a6380d9252f327dca77aa2963d5fbdf9ec54842"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_ES/davefx/medium/MODEL_CARD",
+    "path": "tools_voice/davefx_MODEL_CARD.md",
+    "sha256": "420703b5d8ea239b729f13d83f31eea9bae5fcb89447de23ebc94aa8a4768f95"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_MX/ald/medium/es_MX-ald-medium.onnx",
+    "path": "tools_voice/es_MX-ald-medium.onnx",
+    "sha256": "019b3803293c93e34a206dd2e53a3889209a514e786fd7144f7b70196c579b63"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_MX/ald/medium/es_MX-ald-medium.onnx.json",
+    "path": "tools_voice/es_MX-ald-medium.onnx.json",
+    "sha256": "5a71498158e04afc8099bfd019c7e87c68eb9d042505a2b1a87e5c1ac2b1a61d"
+  },
+  {
+    "url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/es/es_MX/ald/medium/MODEL_CARD",
+    "path": "tools_voice/ald_MODEL_CARD.md",
+    "sha256": "1f0694ceb3f1e78c1e2ee0e2d5da40f19f965bc638e1b4fb4fca9bdca420d713"
+  }
+]

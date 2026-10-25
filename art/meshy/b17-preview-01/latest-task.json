@@ -1,0 +1,23 @@
+{
+  "id": "01a16d47-2d05-705d-9946-e557b8071420",
+  "type": "text-to-3d-preview",
+  "mode": "preview",
+  "name": "",
+  "model_type": "smart-topology",
+  "seed": 1082693282,
+  "prompt": "Realistic game-ready B-17G Flying Fortress WWII heavy bomber exterior, single fuselage, exactly 4 radial piston engines with 4 three-blade propellers, long tapered wings, conventional tail with large dorsal fin, glazed nose with chin turret, cockpit canopy, top and ball turrets, landing gear retracted. Neutral symmetric level-flight pose, isolated object, no background, ground, runway, pilot, text, insignia or extra aircraft. Separate propellers and engine nacelles, clean quad topology, accurate historical silhouette, olive drab painted metal with subtle weathering, PBR textures, optimized for Godot engine.",
+  "texture_prompt": "",
+  "texture_image_url": "",
+  "status": "SUCCEEDED",
+  "created_at": 1792834745378,
+  "progress": 100,
+  "started_at": 1792834745388,
+  "finished_at": 1792834778937,
+  "task_error": null,
+  "model_urls": {
+    "glb": "https://assets.meshy.ai/05b70eb2-812f-4806-8c12-f402034cb151/tasks/01a16d47-2d05-705d-9946-e557b8071420/output/model.glb?Expires=4946400000&Signature=nQLscY~1zDQPTzru~VfQCl4k7Myr7ejHGJz242TMhT-71a-Wb1X3LGiZ48Lgelu7DlOCAkppMYW-Rrf1Mn5nxwbmyaB1q~ycPzmM1BeQgJyfj875x5rNofFz2uZViStKUa7EBO8Ye9y1Oo6~2htj9A~S~DpzBd8BX09AMpueHlNXteLvei75nImQ-EP8ynDZZ9S4S~n1yAefnWiE4JZLlM8UeqsbN-IclgEeCC9gvC0ffNjd6AVHaym3raQIqW93M~h~BF42l2~gzxAP-yLfVbuh-wRNK13J9lUm4~Rie~P8Urb-ejGxIi6xXZ6oUXy4cI7h5hFJdJRRjUV8G5CMcg__&Key-Pair-Id=K1VGYTHIYLM9UM"
+  },
+  "thumbnail_url": "https://assets.meshy.ai/05b70eb2-812f-4806-8c12-f402034cb151/tasks/01a16d47-2d05-705d-9946-e557b8071420/output/preview.png?Expires=4946400000&Signature=AczBV2j2-szoCcd3QL27yQhDU~2M2QTMdhfKurajRzNSixtRWVVAxGXdkI0w69k0oUAU2-ah72z95I4Z8FaBgk~HM4mlDbuz4HGCHxnIwEWJebwGa74gE-G24yiMjo1zwXaSLDlubzZ5FDD1e-JbksisTdGpckmy-mq-KHKJPzliKGuoppJ8TMjWh8uSGkRrnMM8qk9u~LZW8xSnjDyoDF0aXfumIyeXsMW9HEMv6~bdeKFgHiJxHs07IrkSDU-5QWmWM-We3W-UjHLMJ61UQ14UKx~OfhV8mooGaGyURRRVxCi3ou-pxyjvgSyIKTtyRpfNFFQL8SgBF9Ba9vrQTw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+  "texture_urls": [],
+  "consumed_credits": 5
+}

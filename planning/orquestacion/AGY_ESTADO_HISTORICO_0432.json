@@ -1,0 +1,19 @@
+{
+  "status": "candidate_complete",
+  "phase": "release_candidate_ready",
+  "round": 4,
+  "summary": "Código jugable completo e integrado para 'Aurora sobre Europa'. Resueltos y verificados el 100% de los hallazgos de las Revisiones 1 y 2 de Claude: clearance de cámara (>51m frente al mínimo de 25m), 3 compañeros visibles en formación, cámaras en torreta superior y morro acristalado, retículas de artillero y Norden perfectamente centradas en pantalla, impacto de bomba optimizado sin ocluir la cámara, y audio procedural multicanal pausado sin fugas. Batería de 10 pruebas automatizadas superadas con código 0.",
+  "evidence": {
+    "test_qwen_assets": "PASS",
+    "test_claude_batch": "PASS",
+    "test_formation_six": "PASS",
+    "test_combat_sfx": "PASS",
+    "test_combat_manager": "PASS",
+    "test_player_controls": "PASS",
+    "test_long_mission": "PASS (30/60/120 steps/s determinista)",
+    "test_scene_mission": "PASS (785.12s, 60 bursts, hull 55.3%, paridad núcleo/escena)",
+    "test_claude_review": "PASS (Superación formal de todos los hallazgos de las Revisiones 1 y 2 de Claude)",
+    "test_release_acceptance": "PASS (30Hz, 60Hz, 120Hz deterministas, combate, controles, HUD, cero fugas)"
+  },
+  "blocked_operations": []
+}

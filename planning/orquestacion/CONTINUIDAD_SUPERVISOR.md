@@ -1,0 +1,16 @@
+# Continuidad obligatoria del supervisor
+Usuario exigió continuar TRABAJANDO EN EL JUEGO; no cerrar el turno por limpieza/status/otro hito menor. Meta activa: candidato V1LOCAL Linux RTX2060SUPER, no Windows/Ally. Hilo principal SOLO supervisa, no programa producción. Autorizado run y luego ejecutar prompt; no pedir otra confirmación de ejecución.
+
+Estado a11:06aprox24oct2026Hermosillo:
+- ProducciónAgy/Qwen yaGLB B17+5compañeros yBF109/FW190; helperengine_anchors transformado; testindependienteimported PASS.
+- H05/H06 corregidos:direcciones8giros y60punteríasPASS conmaxángulo0,sinwarnings, hashesestables. CámaraNordenfueraGLB z=-11.5; faltaaceptaciónvisual.
+- SuiteCodex13checks todosPASSsalvofixturemanualantiguo; Claudesuautorloenmendó,noalteróproducción. Enmienda_manualtestahoraCOMPLETADA724s,IMPACTO,hull57,rc0sinObjectDB. Copiareleaseprovisionaltodavíatieneoldfixture.
+- Nativecodex_entrega ACTIVO: QA final,diagnósticoutilidadmirabomba frentealcálculobalístico yinputsretenidosal cambiarpuesto, paquete/restauraciónlocal. release/local-20261024-acd6e3ddfc40 provisionalNOACEPTADO. Coldimportreportverifiedfalseaunque rc0yningúnERRORenlog; se avisóposibleverificadorqueexigeTEST_PASSaimportador, agentedebediagnosticar.
+- Claudeexterno iniciado11:00aprox: revisiónGPUintegrada ydiagnósticoObjectDB,capturasen logs/revision_claude/20261024T175932Z-integrado/. Ya17PNG1280reales; rootvió01inicio,03B17close,11Norden libredefuselaje. Modeloaproximadolofttexturado,sinfidelidadAAA. Noautoaprobar.
+- SegundaClaudeexterno exclusivamentefixturemanual: terminóENMIENDA_TEST_MANUAL_CLAUDE.md; produccioneshashes382e...f39d...5d80estables.
+- Agyactual ESTÁPARADOporpermisodenegadoalintentarrepro_controls--verboseordenfueraallow. No repetir esecommandniampliarpermisos; evidenciaH05/H06yaseobtuvoindependiente. CapturaheadlesssinargscolgadaPID1417750sedetuvo; ClaudehaceGPUcorrectamente. AGY_ESTADO.jsonactualawaiting_review por supervisor, nopausadegoal.
+- Infraestructura native supervision_runtime terminada9offlinePASS, backupsnapshots/orchestration-runtime-20261024T104904. Nuevoencargar_qwen.py entraenvigorsiguienteinvocación; nuevoagy_coordinador.py requiereNUEVOARRANQUE, nopróximarondadeviejo. Actualharnessdetenido, porloque próximaasignaciónusaráversiónnueva. Reconoceawaiting_review, heartbeat, nuevosQAtestsyleaks/hash/actafresca.
+
+Siguiente: esperar dictámenesactualesCodeX/Claude; sihaydefectosreales, asignarcontratoacotadoAgy/Qwen porMETAactualizada concheckpointREAL(noobligarrepetiraircraft). No exigirprimerashitosarchivosvacíoscomobarrerasinfundamento: VENTANA_REVISION_ACTUAL.md autorizórevisiónporhashesantes/después. CongelarCandidate,QA/visual,restauración/arranqueGPUe instruccionesexactasLinux; abrírventananueva deljuegoycerrarsoleoldinstancaproceduralcuandoesténueva lista. SoloentoncesdictamenfinaldeV1local conlimitacionescosméticasrealessinpromesasAlly. No publicar,pagararte,cambiarconfigglobal.
+
+Consolavisiblemonitortail logs/orquestacion/{supervisor,agy,claude,qwen,codex_entrega}.log sepreservó. Reportarcadaavanceverificadoconfechaevidenciaen supervisor.log.29consolasobsoletasya cerradasuserpidiólimpieza; noabandonarjuego de nuevo.

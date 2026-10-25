@@ -1,0 +1,5 @@
+{
+  "path": "audio/sfx_bank.gd",
+  "brief": "Implement godot/B17/audio/sfx_bank.gd for Godot 4.7. Output ONLY GDScript code. Do NOT output markdown.\n\nStructure:\nclass_name SfxBank\nextends RefCounted\n\nconst DIR := \"res://assets/audio/sfx/\"\n\nstatic func get_stream(name: String) -> AudioStream:\n\tvar clean_name: String = name.trim_suffix(\".wav\")\n\tvar path: String = DIR + clean_name + \".wav\"\n\tvar raw := load(path) as AudioStream\n\tif raw == null:\n\t\treturn null\n\tif clean_name.ends_with(\"_loop\") and raw is AudioStreamWAV:\n\t\tvar s: AudioStreamWAV = raw.duplicate() as AudioStreamWAV\n\t\tvar channels: int = 2 if s.stereo else 1\n\t\ts.loop_mode = AudioStreamWAV.LOOP_FORWARD\n\t\ts.loop_begin = 0\n\t\ts.loop_end = int(s.data.size() / (2 * channels))\n\t\treturn s\n\treturn raw\n\nstatic func random_variant(base: String, count: int, rng: RandomNumberGenerator = null) -> AudioStream:\n\tvar idx: int = rng.randi_range(1, count) if rng != null else randi_range(1, count)\n\tvar variant_name: String = \"%s_%02d\" % [base, idx]\n\treturn get_stream(variant_name)\n",
+  "test": "tests/test_sfx_bank.gd"
+}

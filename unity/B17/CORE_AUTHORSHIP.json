@@ -1,0 +1,14 @@
+{
+  "primary_author": "qwen2.5-coder:7b-instruct-q4_K_M",
+  "files": [
+    "FlightModel.cs",
+    "BombModel.cs",
+    "DamageModel.cs",
+    "FlakModel.cs",
+    "MissionModel.cs",
+    "FighterPattern.cs"
+  ],
+  "contracts_and_bootstrap": "Codex",
+  "validation": "pending Unity compilation",
+  "evidence": "/home/test-bench/Documents/B17-project/logs/unity-core/20261024T085241Z"
+}

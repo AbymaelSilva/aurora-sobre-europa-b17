@@ -1,0 +1,114 @@
+# Informe de Preparación: QA, Inventario y Recepción de Arte (Agy)
+
+**Modo de operación:** Análisis documental sin ejecución de herramientas en este turno. No se han invocado comandos del sistema ni leído/escrito archivos en disco; las comprobaciones técnicas de inventario se basan exclusivamente en la evidencia documental provista.
+
+---
+
+## A01 — Inventario de Capacidades
+
+### 1. Capacidades Comprobadas (Documental)
+* **Modelo LLM Local:** 
+  * Verificada la presencia de `qwen2.5-coder:7b-instruct-q4_K_M` (7.6B, Q4_K_M, arquitectura Qwen2) en `/run/media/test-bench/38340C17340BD6B2/SentinelX/LLM`.
+  * Verificada la existencia y tamaño de sus seis blobs constitutivos y el manifiesto.
+  * Existe script lanzador `servir_qwen.sh` configurado para `127.0.0.1:11435` y contexto 4096.
+* **Marco de Trabajo y Roles:**
+  * Distribución de responsabilidades establecida (Codex orquesta/integra; Qwen genera código base; Claude revisa arquitectura; Agy cubre QA/inventario/arte).
+  * Hitos 1 a 7 formalizados desde prototipo con bloques grises hasta validación en hardware destino (Ally X).
+* **Criterio de Motor:**
+  * Pre-selección provisional de Godot 4 estándar (GDScript tipado) como vía ágil para prototipo, manteniendo Unity/C# como candidato principal evaluable mediante prueba comparativa.
+
+### 2. Capacidades Faltantes y Pendientes de Verificación
+* **Inferencia Local Activa:** No se ha comprobado el hash completo de los blobs ni se ha ejecutado inferencia de prueba con Qwen. El puerto `11434` reportó bloqueo de permisos en revisiones previas; el puerto `11435` no ha sido testeado en ejecución activa.
+* **Binarios del Motor:** Pendiente comprobar versión exacta instalada/ejecutable de Godot y Unity en el host, así como plantillas de exportación para Windows x86_64.
+* **Canal con Claude:** Sin conectividad operativa verificable (último intento finalizó por timeout de 35s, código 124).
+* **Pipeline de Audio:** Herramienta y cadena de integración sonora pendientes de definición técnica.
+
+---
+
+## A02 — Criterios de Prueba de QA (Hitos 2, 3 y 4)
+
+### 1. Vuelo y Mando
+* **Pasos:**
+  1. Iniciar escena de vuelo con modelo de masa simplificada.
+  2. Aplicar cabeceo, alabeo y guiñada hacia límites positivos y negativos de forma sostenida y luego soltar mando.
+  3. Comprobar comportamiento a distintas tasas de refresco (30 Hz, 60 Hz y tasa variable).
+* **Resultado Esperado:**
+  * Velocidad angular y aceleración limitadas según envolvente de diseño sin derivas numéricas (`NaN`/`Inf`).
+  * El avión responde suavemente, estabiliza controles en reposo y no sufre bloqueos de eje tipo gimbal lock.
+* **Evidencia a Capturar:** Registro numérico de telemetría (posición, rotación, velocidad lineal y angular por tick) y captura de vídeo del comportamiento visual en extremos de mando.
+
+### 2. Pausa y Reinicio
+* **Pasos:**
+  1. Durante maniobra de viraje pronunciado y aceleración, accionar pausa (`input_pause`).
+  2. Verificar estado de simulación física, audio y cámara durante 5 segundos.
+  3. Despausar; posteriormente pausar de nuevo y accionar reinicio (`input_restart`).
+* **Resultado Esperado:**
+  * Al pausar: congelamiento total del paso de física (`delta = 0`) sin acumulación de fuerzas en el buffer; entradas de vuelo bloqueadas; menú accesible.
+  * Al despausar: reanudación continua sin saltos posicionales bruscos.
+  * Al reiniciar: restauración limpia de posición inicial, acumuladores de física, temporizadores y variables de estado sin reinyección de basura de memoria.
+* **Evidencia a Capturar:** Registro de tiempos de ciclo (`engine tick`), gráfico de posición previa y posterior a la pausa/reinicio y registro de objetos huérfanos en memoria.
+
+### 3. Cambios de Puesto (Piloto / Torreta / Mira)
+* **Pasos:**
+  1. Iniciar vuelo nivelado en puesto de Piloto.
+  2. Alternar cíclicamente: Piloto -> Torreta -> Mira de bombardeo -> Piloto (con cambios lentos y cambios rápidos consecutivos).
+* **Resultado Esperado:**
+  * La cámara activa cambia limpiamente; no coexisten cámaras concurrentes activas.
+  * El mapa de entradas conmuta exclusivamente al rol seleccionado (la torreta no altera los alerones; el visor de mira no dispara las armas de torreta).
+  * Al abandonar el puesto de Piloto, la rutina de piloto automático/mantenimiento mantiene rumbo, altitud y nivel de vuelo sin entrar en pérdida.
+* **Evidencia a Capturar:** Log de conmutación de estado de entrada (InputMap), ID de cámara activa por fotograma e historial de altitud/rumbo durante la ausencia del piloto.
+
+### 4. Bombardeo
+* **Pasos:**
+  1. Cambiar a puesto de Mira y alinear retícula con un blanco terrestre predeterminado.
+  2. Liberar la bomba disponible (`input_bomb_release`).
+  3. Intentar realizar un segundo lanzamiento inmediato.
+  4. Observar trayectoria balística hasta impacto o toque en suelo fuera del objetivo.
+* **Resultado Esperado:**
+  * Desenganche correcto del proyectil con vector inicial heredado del avión.
+  * Decremento del contador de munición a 0; segundo intento de disparo rechazado limpiamente sin excepciones de puntero nulo.
+  * Detección inequívoca de impacto (área de daño) o fallo; evento notificado a la lógica de misión.
+* **Evidencia a Capturar:** Trazado de coordenadas de la bomba vs. tiempo, evento emitido por el collider del blanco (éxito/fallo) y log de munición remanente.
+
+---
+
+## A03 — Requisitos de Recepción de Modelos 3D (OpenArt / Meshy)
+
+Para admitir modelos generados por IA en el pipeline del proyecto sin incurrir en deuda técnica:
+
+1. **Referencias y Coherencia:**
+   * Proporcionar al menos 3 vistas ortogonales consistentes (lateral, superior, frontal) previas a la generación 3D para preservar proporciones generales del B-17.
+2. **Escala y Orientación:**
+   * Escala métrica real 1 unidad = 1 metro (envergadura aproximada de 31.6 m, longitud 22.7 m).
+   * Sistema de coordenadas estándar: Frente hacia `-Z` (o estándar definido por el motor), Arriba hacia `+Y`, centrado en origen de gravedad aproximado.
+3. **Pivotes y Jerarquía de Sub-mallas (Hélices y Componentes):**
+   * El fuselaje principal debe ser la raíz.
+   * Las 4 hélices deben estar separadas como objetos independientes con su punto de pivote centrado exactamente en el eje de rotación de sus respectivos motores.
+   * Torretas (dorsal, ventral/bola, cola) separadas con pivote en base de giro azimutal.
+4. **Geometría y Topología:**
+   * Malla poligonal limpia (triángulos o cuadriláteros convertibles), libre de normales invertidas, polígonos no-múltiples (non-manifold) o vértices coincidentes no soldados.
+   * Presupuesto orientativo para prototipo/bloque: bajo conteo poligonal (Low/Mid poly: < 15,000 tris para avión completo).
+5. **UVs y Materiales:**
+   * Mapeo UV desplegado en espacio [0, 1] sin solapes en texturas asimétricas (identificaciones o marcas históricas).
+   * Un único set de materiales PBR básico (Albedo/BaseColor, Roughness, Normal) para minimizar draw calls en pruebas de rendimiento.
+6. **Colisiones:**
+   * No utilizar la malla visual compleja para colisiones. El activo debe incluir formas primitivas dedicadas (cajas/cápsulas) o malla convexa simplificada separada (`-col` o prefijo equivalente según motor).
+7. **Niveles de Detalle (LOD):**
+   * Preparar estructura para 2 niveles base: LOD0 (vistas en primera persona/torreta) y LOD1 (visión externa en formación/vuelo lejano con hélices fusionadas o como planos de giro).
+
+---
+
+## Supuestos, Bloqueos y Siguientes Tareas
+
+### Supuestos Registrados
+* Se asume de forma provisional que el entorno de desarrollo operará bajo Linux exportando ejecutables Windows x86_64 para las pruebas de campo.
+* Se asume que el lanzador `servir_qwen.sh` en el puerto `11435` será el método preferente para levantar el LLM sin interferir con servicios de sistema en el puerto estándar `11434`.
+
+### Bloqueos Identificados
+* **B01 — Ausencia de handshake con Claude:** Canal no responsivo tras intento previo (código 124). Las decisiones de arquitectura continúan bajo responsabilidad de Codex.
+* **B02 — Estado real del runtime LLM:** No se cuenta con prueba de inferencia real en el host que garantice tiempos de respuesta viables sin degradación de RAM/VRAM.
+
+### Siguientes Tareas para Codex
+1. **Ejecutar prueba de inferencia mínima de Qwen:** Invocar una consulta de prueba vía `servir_qwen.sh` en puerto `11435` y medir uso de memoria y tiempo de respuesta sin carga gráfica.
+2. **Fijar versión del motor:** Comprobar binario de Godot 4 / Unity en el host y ejecutar la prueba comparativa breve C# vs. GDScript para cerrar definitivamente la elección del motor para el hito 1.
+3. **Inicializar estructura del proyecto:** Crear el proyecto base vacío bajo `/home/test-bench/Documents/B17-project` y validar la exportación inicial a Windows x86_64.

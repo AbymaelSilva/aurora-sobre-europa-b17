@@ -1,0 +1,36 @@
+{
+  "id": 165808,
+  "author": "sidohzen",
+  "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+  ],
+  "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+  "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+  "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+  ],
+  "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+  "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840"
+}

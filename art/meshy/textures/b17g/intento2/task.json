@@ -1,0 +1,18 @@
+{
+ "id": "01a16fe3-7311-7144-bfdd-becd4b3efd4d",
+ "type": "retexture",
+ "status": "SUCCEEDED",
+ "consumed_credits": 10,
+ "texture_resolution": "4k",
+ "created_at": 1792878542567,
+ "finished_at": 1792878592108,
+ "text_style_prompt": "Boeing B-17G Flying Fortress, 1944 USAAF. Entire airframe in unpainted natural aluminium: fuselage, upper and lower wing surfaces, tailplanes, fin and engine nacelles all bare aluminium with subtly varying panel tones, crisp recessed panel lines and flush rivets on every surface. Olive drab anti-glare panel only in front of the cockpit. Clear plexiglass nose. Narrow black de-icer boots only on wing and tail leading edges. Light weathering: exhaust soot streaks over the wings behind each engine nacelle, oil stains on nacelles. Plain metal elsewhere: no insignia, no emblems, no roundels, no badges, no text, no numbers, no nose art, no dark painted wings. Physically based materials, metallic aluminium with low roughness, realistic WWII bomber",
+ "art_style": "realistic",
+ "hd_texture": true,
+ "texture_maps": [
+  "base_color",
+  "metallic",
+  "roughness",
+  "normal"
+ ]
+}

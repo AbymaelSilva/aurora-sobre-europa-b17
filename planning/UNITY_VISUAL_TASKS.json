@@ -1,0 +1,30 @@
+[
+  {
+    "path": "Assets/Scripts/Presentation/PartFactory.cs",
+    "prompt": "public static class PartFactory. Include System.Collections.Generic. Private static Dictionary<Color,Material> materials. public static Material MaterialFor(Color color): return cached or create new Material(Shader.Find(\"Standard\")), set color, SetFloat(\"_Metallic\",.35f), SetFloat(\"_Glossiness\",.4f), enableInstancing=true and cache. If color.a<.99f configure Standard transparency: SetFloat(\"_Mode\",3), SetInt(\"_SrcBlend\",(int)UnityEngine.Rendering.BlendMode.SrcAlpha), SetInt(\"_DstBlend\",(int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha), SetInt(\"_ZWrite\",0), EnableKeyword(\"_ALPHABLEND_ON\"), renderQueue=3000. public static GameObject Make(Transform parent,string name,PrimitiveType type,Vector3 position,Vector3 scale,Color color): CreatePrimitive, name, transform.SetParent(parent,false), localPosition/localScale from args, GetComponent<Renderer>().sharedMaterial=MaterialFor(color), remove collider safely, return object. Nothing else."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/BomberBody.cs",
+    "prompt": "public sealed class BomberBody:MonoBehaviour. In Awake construct shapes using PartFactory.Make(transform,name,type,localPosition,scale,color). Olive=(.28,.33,.18), glass=(.22,.36,.44,.7), dark=(.08,.09,.08). Create fuselage Sphere scale(2.7,3,20) atzero; tapered rear Sphere scale(1.8,2,10) at(0,.2,-6); glazed nose Sphere scale(2.5,2.7,3) at(0,0,9.8); cockpit glass Sphere scale(2.2,1.5,3.4) at(0,1.35,5.8); cabin frame Cube scale(.12,1.3,3.4) at(0,1.4,5.8); upper glass turret Sphere scale(1.6,1.3,1.6) at(0,2.1,2); belly glass turret Sphere scale(1.4,1.3,1.4) at(0,-1.8,-.5); horizontal tail Cube scale(10,.3,2.4) at(0,1,-8.5); vertical tail Sphere scale(.3,4.3,3.8) at(0,2.4,-8.7); tail gun dark Cube scale(.35,.35,2) at(0,.3,-11). No updates, flight, input, colliders, arrays or extra classes. Under60 lines."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/BomberWings.cs",
+    "prompt": "public sealed class BomberWings:MonoBehaviour. Awake calls Build(1f) and Build(-1f). private void Build(float side) creates trapezoidal wing mesh as child. Eight vertices: top four at (1.1*side,.2,2.2),(15.8*side,1.0,.5),(15.8*side,1.0,-1.6),(1.1*side,.2,-3.7); bottom corresponding with y .25 lower. Triangle array top0,1,2,0,2,3; bottom4,6,5,4,7,6; front0,4,5,0,5,1; tip1,5,6,1,6,2; back2,6,7,2,7,3; root3,7,4,3,4,0. If side<0 swap second and third index of each triangle. Mesh.vertices and triangles, RecalculateNormals and RecalculateBounds. Create child GameObject, parent localidentity, AddComponent<MeshFilter>().sharedMesh=mesh; AddComponent<MeshRenderer>().sharedMaterial=PartFactory.MaterialFor(new Color(.28f,.33f,.18f)). No boxes, colliders, update or input. Under70 lines."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/BomberEngines.cs",
+    "prompt": "public sealed class BomberEngines:MonoBehaviour. Member Transform[] propellers=new Transform[4]. Awake: x positions float[]{-9.4f,-4.4f,4.4f,9.4f}; for each create Cylinder nacelle via PartFactory.Make at(x,-.05f,2.8f), scale(1.8f,1.55f,1.8f), olive(.27,.3,.17), then localRotation=Quaternion.Euler(90,0,0). Create Sphere spinner at(x,0,4.5) scale(.8,.8,1) dark grey. Create empty child named Propeller localPosition(x,0,5). For j=0..2 create Cube blade via PartFactory.Make(propeller,..) localPosition initially(0,1.05,0), scale(.18,2.1,.08), color(.07,.07,.07); set blade localPosition=Quaternion.Euler(0,0,j*120)*Vector3.up*1.05 and localRotation=Quaternion.Euler(0,0,j*120). Save propeller Transform. Update rotates each nonnull propeller around local z by1800*Time.deltaTime with Space.Self. No inputs, custom constructors or other dependencies. Under75 lines."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/BomberAircraft.cs",
+    "prompt": "public sealed class BomberAircraft:MonoBehaviour. Awake: gameObject.AddComponent<BomberBody>(); gameObject.AddComponent<BomberWings>(); gameObject.AddComponent<BomberEngines>(); nothing else. The builders create original procedural bomber geometry. No camera, input, flight, colliders or auto-scaling."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/FighterAircraft.cs",
+    "prompt": "public sealed class FighterAircraft:MonoBehaviour. Awake creates visual fighter geometry using PartFactory.Make: fuselage Sphere scale(1.3,1.4,8) atzero dark gray(.25,.27,.25); wings Cube scale(9,.15,1.6) at(0,0,.5); tail Cube scale(3.5,.15,1) at(0,.4,-3); fin Sphere scale(.15,1.8,1.4) at(0,1,-3); cockpit glass Sphere scale(.8,.8,1.8) at(0,.8,.3) color(.15,.3,.4,.8). Empty propeller child localPosition(0,0,4.3), two Cube blades as children positions zero scales(.12,3,.06) and(3,.12,.06), dark. Member Transform propeller; Update rotates around localz by1900*Time.deltaTime. No player control, physics or combat logic. Under60 lines."
+  },
+  {
+    "path": "Assets/Scripts/Presentation/ProceduralAudio.cs",
+    "prompt": "public static class ProceduralAudio. public static AudioClip Engine(): rate=22050,count=rate*2; float[] data; for i in count t=(float)i/rate; data[i]=.12f*Mathf.Sin(2*Mathf.PI*70*t)+.07f*Mathf.Sin(2*Mathf.PI*140*t)+.035f*Mathf.Sin(2*Mathf.PI*35*t); create AudioClip.Create(\"Four engines\",count,1,rate,false); SetData(data,0); return clip. public static AudioClip Explosion(): rate22050,count=rate; System.Random rng=new System.Random(17); for i t=(float)i/rate; data[i]=((float)rng.NextDouble()*2-1)*Mathf.Exp(-7*t)*.6f+Mathf.Sin(2*Mathf.PI*45*t)*Mathf.Exp(-10*t)*.3f; clip Create same channels withnameFlak; SetData return. No MonoBehaviour, no audio playback or inputs. Under60 lines."
+  }
+]

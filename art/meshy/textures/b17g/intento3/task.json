@@ -1,0 +1,18 @@
+{
+ "id": "01a16fef-168e-7698-8dac-89e49116d927",
+ "type": "retexture",
+ "status": "SUCCEEDED",
+ "consumed_credits": 10,
+ "texture_resolution": "4k",
+ "created_at": 1792879303954,
+ "finished_at": 1792879340078,
+ "text_style_prompt": "",
+ "art_style": "realistic",
+ "hd_texture": true,
+ "texture_maps": [
+  "base_color",
+  "metallic",
+  "roughness",
+  "normal"
+ ]
+}

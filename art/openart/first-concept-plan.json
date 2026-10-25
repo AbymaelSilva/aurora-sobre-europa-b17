@@ -1,0 +1,15 @@
+{
+  "author": "Claude",
+  "authorization": "User explicitly requested Claude-OpenArt and Claude-Meshy to create art",
+  "model": "gpt-image-2-5-sunburst",
+  "mode": "text2image",
+  "prompt": "Cinematic photorealistic 16:9 wide shot, early morning over the European countryside during World War II. A B-17G Flying Fortress, seen from behind and slightly above in a three-quarter rear view, flies in the right half of the frame, exactly four propeller engines, accurate proportions of fuselage, wings and tail. Two distant bombers escort it in loose formation. Below, patchwork farm fields and a winding river under scattered clouds and atmospheric haze. Warm golden side light from a low sun, restrained palette of olive drab, steel blue and muted grey. Fine detail of riveted aluminum, panel seams, weathered paint and believable glass turrets. Strong sense of scale, tense serenity, a few small faint flak bursts on the horizon. Left half of the frame clean, dark and uncluttered sky as negative space for a title. Clear composition, natural color, film grain, not painterly. No text, letters, logos, watermarks, serial numbers, insignia, recognizable characters, UI, jets or impossible geometry, no oversaturation.",
+  "config": {
+    "imageCount": 1,
+    "resolutionTier": "2k",
+    "aspectRatio": "16:9",
+    "quality": "medium"
+  },
+  "quoted_credits": 45,
+  "status": "ready_to_submit"
+}

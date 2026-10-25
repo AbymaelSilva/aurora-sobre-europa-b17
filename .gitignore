@@ -1,0 +1,32 @@
+# Motor y herramientas de terceros (se descargan, no se versionan)
+tools/godot
+tools/Godot_v4.7.2-stable_linux.x86_64.zip
+tools/godot-version.txt
+tools/unity/
+tools/unity-hub/
+tools/unity-editor-path.txt
+tools_voice/*.onnx
+
+# Compilados y paquetes de distribución (se regeneran desde el código fuente)
+build/
+builds/
+release/
+snapshots/
+
+# Caché de Godot (se regenera al abrir el proyecto)
+.godot/
+godot/B17/.godot/
+*.import
+
+# Bitácoras y artefactos operativos de las sesiones de desarrollo
+logs/
+*.console.log
+*.status.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Archivos de bloqueo y temporales
+*.lock
+*.tmp

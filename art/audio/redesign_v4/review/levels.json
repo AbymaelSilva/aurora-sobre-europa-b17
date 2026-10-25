@@ -1,0 +1,38 @@
+{
+  "engine_b17_ext_loop.wav": {
+    "A_sha256": "caafcc7ffa4c7262def915f9e3f8802911acc42e226c2d464f9e7c1cf97752b4",
+    "B_sha256": "91e7e518f16ed39761d35f44cdabdf8d35396a56f0b17086252b6fddab012791",
+    "common_rms_dbfs": -20.000267503719996,
+    "A_gain_db": 0.0,
+    "B_gain_db": -2.0665032859179635e-06,
+    "order": "A anterior, 600 ms silence, B contextual",
+    "listened": false
+  },
+  "engine_b17_int_loop.wav": {
+    "A_sha256": "58b4c3a2bf346b92981f4aa3a193b8911f36fdca7bc23cc019deb7b66c844e54",
+    "B_sha256": "c11a42c5f0c6964b7893141d65f11b348350db01e7256ed8f27a7456eaca1be1",
+    "common_rms_dbfs": -20.00026598798071,
+    "A_gain_db": -7.98427659929231e-07,
+    "B_gain_db": 0.0,
+    "order": "A anterior, 600 ms silence, B contextual",
+    "listened": false
+  },
+  "flak_near_01.wav": {
+    "A_sha256": "612ed1235dbe5560e7004125f5fb91e0628a0c54f67cdfe567bec45a1f90754d",
+    "B_sha256": "d5c99b5718bac44ea86f0310487fc932f07f497258c53241b14e534ddaf9734f",
+    "common_rms_dbfs": -15.652260789233683,
+    "A_gain_db": -1.289073665153745,
+    "B_gain_db": -0.09977633013391332,
+    "order": "A anterior, 600 ms silence, B contextual",
+    "listened": false
+  },
+  "station_switch.wav": {
+    "A_sha256": "12eb0b6e74b5f5f7579e9aafdae55853f5e6f82c7262edb152ee1ce5329850b5",
+    "B_sha256": "35a90c600f00436a40b2b5471e30bfdb1f3e1f2d4a09cdea53c9f5e309025ad5",
+    "common_rms_dbfs": -24.503460747306733,
+    "A_gain_db": -2.503187249509255,
+    "B_gain_db": -0.09977633013391332,
+    "order": "A anterior, 600 ms silence, B contextual",
+    "listened": false
+  }
+}

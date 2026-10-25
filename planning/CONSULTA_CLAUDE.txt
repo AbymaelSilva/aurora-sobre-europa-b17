@@ -1,0 +1,22 @@
+Actúa como revisor técnico y responde en español. No escribas código ni uses herramientas. Revisa esta propuesta y señala errores y datos faltantes.
+
+Juego Windows de B-17 con historia original inspirado en la tensión de Masters of the Air. Desarrollo en ASUS con RTX 2060 SUPER declarada por el usuario. El entorno inspeccionado informa Linux, i5-12490F y 14 GiB de RAM disponible total; falta validar GPU, almacenamiento y si es el sistema definitivo. Destino ROG Ally X.
+
+Una misión de 15 minutos: inicio en vuelo, pequeña formación, encuentro con cazas, antiaérea, ataque a instalación ferroviaria ficticia y regreso a zona segura. Puestos: piloto accesible, una torreta y mira de bombardeo; automatizar puestos inactivos. Daños básicos de motor, controles y torreta. Sin multijugador, interiores transitables, despegue/aterrizaje ni simulación exhaustiva.
+
+Qwen será el codificador principal. El usuario comunica Qwen2.5-5B pero el identificador exacto y la ejecución local siguen sin verificar. Codex orquesta e integra; Claude revisa. OpenArt conectado con 1378 créditos al consultar, Meshy verificado por el usuario con 1200 créditos, clave no guardada. No generar recursos ni implementar todavía.
+
+Entrega:
+1. Bloqueantes reales frente a decisiones que podemos resolver por defecto.
+2. Comparación provisional Godot/Unity/Unreal para esta escala, recursos y codificador local pequeño. No inventes versiones o condiciones actuales.
+3. Arquitectura mínima modular, contratos y orden de dependencias para Qwen.
+4. Hitos con criterios de aceptación observables. Primero vuelo/cámara/control de mando, luego puestos y bombardeo; después combate, misión y arte.
+5. Un ejemplo de encargo pequeño a Qwen, sin implementar: objetivo, contexto, archivos permitidos, entradas/salidas, casos límite y comprobación.
+6. Flujo OpenArt-Meshy: consistencia de vistas, geometría histórica, hélices separadas, pivotes, colisiones, materiales, niveles de detalle y licencias. Distinguir concepto visual de recurso funcional.
+7. Rendimiento a medir en Ally X sin prometer FPS. Qué escenas y métricas usar.
+8. Qué falta en audio y cómo verificar herramientas antes de atribuirles generación de sonido.
+9. Riesgos de alcance, mecanismos de revisión y cómo mantener a Qwen como autor principal del código sin aceptar errores.
+
+Esta revisión será una propuesta, no una validación ejecutada del juego. Sé concreto, critica las premisas y evita promesas de producción AAA o plazos no medidos.
+
+Actualización: encontrado qwen2.5-coder:7b-instruct-q4_K_M en /run/media/test-bench/38340C17340BD6B2/SentinelX/LLM. Informe local 7.6B, Q4_K_M; manifiesto y tamaños de seis blobs presentes, inferencia no probada. Lanzador existente configurado para 127.0.0.1:11435. El usuario pregunta por qué no Unity: evalúa Unity/C# como candidato principal junto con Godot/GDScript. No atribuyas ventajas de rendimiento del modelo por lenguaje sin medición. Propón comparación pequeña y equivalente antes de cerrar motor.

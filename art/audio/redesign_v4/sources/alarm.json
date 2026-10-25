@@ -1,0 +1,36 @@
+{
+  "id": 217486,
+  "author": "sbyandiji",
+  "url": "https://freesound.org/people/sbyandiji/sounds/217486/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/217/217486_4017029-hq.mp3"
+  ],
+  "description": "A short alarm school bell recorded in a UK school-hall. Two blasts, some background room-tone with clock ticking.\n\nMics: SE electronics RN17 as coincident pair\nMic pres/Recorder: Apogee ensemble into Logic",
+  "original_sha256": "7002da5342726dfeb13ce79f13cbd0297f2540a4324ee82a4dd6e7f38c3b3c4d",
+  "decoded_sha256": "ae30e4f476940ddc02297331e0103657533e56ed340a39884f3d1d9748baa90a",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/alarm-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/alarm-decoded.wav"
+  ],
+  "title": "Freesound - Short Alarm bell in school hall (some clock ticks etc).aif by sbyandiji",
+  "individual_page_sha256": "e8bf48a22ceb849ffd9339b690d9b4932558f84447c735975fc0024e29760ba2"
+}

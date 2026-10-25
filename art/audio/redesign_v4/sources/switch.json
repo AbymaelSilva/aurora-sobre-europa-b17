@@ -1,0 +1,36 @@
+{
+  "id": 697807,
+  "author": "DustyWind",
+  "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+  ],
+  "description": "A click of a metal button in my room",
+  "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+  "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+  ],
+  "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+  "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361"
+}

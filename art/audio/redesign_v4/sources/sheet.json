@@ -1,0 +1,36 @@
+{
+  "id": 262516,
+  "author": "Stereo Surgeon",
+  "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/262/262516_2297168-hq.mp3"
+  ],
+  "description": "A sharp metallic percussion sound from me hitting a sheet of steel with a steel implement.\n\n[Key: ]\n[Format: wav]\n[License: CC 0]",
+  "original_sha256": "357e0f322efbb2e208a3d156dab0eacb02036177713cc5c549e0d54bfd246ac6",
+  "decoded_sha256": "1870c28c08a0719278b0a924e99dc19bc3d837e17172190a64e1c1818a52db55",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/sheet-decoded.wav"
+  ],
+  "title": "Freesound - Metal Sheet Hit by Stereo Surgeon",
+  "individual_page_sha256": "7ddfc9de7f66c918d54565faeb7f6f708a53b17c6d63194f75d0dbe7b9b9b453"
+}

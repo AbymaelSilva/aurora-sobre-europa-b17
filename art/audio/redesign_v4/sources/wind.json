@@ -1,0 +1,36 @@
+{
+  "id": 146914,
+  "author": "felix.blume",
+  "url": "https://freesound.org/people/felix.blume/sounds/146914/",
+  "license": [
+    "http://creativecommons.org/publicdomain/zero/1.0/"
+  ],
+  "preview": [
+    "https://cdn.freesound.org/previews/146/146914_1661766-hq.mp3"
+  ],
+  "description": "Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile).\n\n\nSound recorded by a MS setup Schoeps Microphone CCM41&CCM8;\nSound Devices 744T Recorder\nMS is encoded in STEREO Left-Right\nrecorded in january 2012 in the desert of Atacama (Chile)\nSound Reference: @CAM120118T014\n\nmore sounds on <a href=\"http://www.felixblume.com\" rel=\"nofollow\">http://www.felixblume.com</a>",
+  "original_sha256": "ef6b9ea532919862fcf0680ddab1eeb112248f2513ce738c161042fdff93831d",
+  "decoded_sha256": "6191d798803d3003d675e5e591a1d0bb324cd217e49d87cc2b9dbd2ce96e4da2",
+  "original_kind": "HQ MP3 public preview; lossy, not original master",
+  "decode_command": [
+    "gst-launch-1.0",
+    "-q",
+    "filesrc",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-hq.mp3",
+    "!",
+    "decodebin",
+    "!",
+    "audioconvert",
+    "!",
+    "audioresample",
+    "!",
+    "audio/x-raw,format=S16LE,rate=44100,channels=2",
+    "!",
+    "wavenc",
+    "!",
+    "filesink",
+    "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/wind-decoded.wav"
+  ],
+  "title": "Freesound - Strong wind blowing and howling in the middle of the desert of Atacama, in the \"moon valley\" (Chile) by felix.blume",
+  "individual_page_sha256": "f96aef638188323ed105cf9f5304fef54ec4de57d928fe9073b3df4ed3c70bd1"
+}

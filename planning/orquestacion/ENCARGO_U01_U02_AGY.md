@@ -1,0 +1,24 @@
+# Encargo prioritario Agy/Qwen — cerrar U01/U02 para V1LOCAL
+Ejecución autorizada. No rehacer modelos/cazas/anclajes/H05/H06: ya pasaron revisión independiente. No capturas headless, no repro_controlsdenegado, no comandosls/genéricos ni permisosglobales. El principal solo supervisa. Trabaja hasta entregar ambas correcciones con pruebas y checkpoint.
+
+## Estado comprobado
+Codex: modelosactivos+formación+combate+controles+escenaPASS; manualfixtureClaudeenmendadoPASS724s IM PACTO hull57sinObjectDB; paqueteLinux fuente+motor+lanzador restaurado con importaciónfría y misiónPASSenhost. CLAUDE está revisandoGPUvisual/audio ahora. TodavíaNOACEPTADO. Árbol producción estable antesdeestos cambios, manifiestoreleaseanterior quedaráanticuadoalcorregir.
+
+## Primero leer estas rutas conocidas con herramientasdearchivos, sinlistados
+planning/orquestacion/REVISION_BOMBARDEO_MANUAL_CODEX.md; godot/B17/core/player_controls.gd; godot/B17/bomb_model.gd; godot/B17/core/simulation.gd; godot/B17/ui/mission_overlay.gd; game.gd; planning/orquestacion/ENMIENDA_TEST_MANUAL_CLAUDE.md.
+
+## U01 — Ayuda visible y real de suelta de bomba, Qwenprincipal
+El retículo actualmira266m adelante a1200m/85mps,pero la bomba avanza1329m. Soltarconcruzcentradafalla1062m; robotmanuallee fórmulasecreta. No aceptar con simpletexto fijo.
+Meta mínima: usuario de puestoBOMBARDEROenmodoMANUAL recibe señal clara basada en balística REAL para poderpulsarSPACE y acertar. No automatizar suelta, no exigiraritméticaalusuario ni cambiar vuelo/campaña. Mantener mira sihayayudaclara distinta, sinfingirquecruzdecorativaesimpacto.
+Declaro archivos nuevos Qwen permitidos: core/bombing_aid.gd (lógica pequeña) y ui/bombing_cue.gd (widgetpequeño) si facilitar evita reescribir300líneas. Agy integra conpatchespequeños en game.gd. Alternativa equivalente conoverlay existentepermitida, publicacontrato antes deescribir. Reutiliza gravedad yvelocidad/origenqueusa bomb_model; sincambioshiddena radio/blancoparaPASS.
+Contrato de datos compartidos paraQA: un diccionario `bombing_aid` expuesto en overlay.data (o cue.data conruta explícitaentregada) que la UIREALrenderice. Campos mínimos `release_now:bool`, `eta_seconds:float`, `lateral_error_m:float`, `status:String`, `predicted_impact:Vector3`. Datos calculados desdeestadoactual, no fases/tiempo hardcoded. Si tuinterfaz difiere,documenta equivalenciaenCOORDINACIONAGYantesdepruebas.
+UIvisible: indicación de aproximación/cuentaatrás oadelanto, correcciónderumbo si fueraeje, señal inequívocaSUELTA AHORA vinculada a release_now, yestadoBOMBAS FUERA si gastada. Soloactivarverdeconsoluciónválida; siobjetivoyaquedóatrásnofalsopositivo. No mostrar mensaje genérico imperativo ESPACIO SOLTAR todoeltramo como si cualquierinstantefueraacierto. V1LOCAL teclado/ratón: quitartexto AllyXintroqueahoranoaplica,conservar soporteexistente sin borrarcontroles.
+QAantesdeaceptar: caso1200m/85mpsy variaciones razonablesvelocidad/altura: operador sintéticousaSOLAMENTEelmismodiccionarioexpuestoalHUD para decidir ypulsa tecla realSPACE; modelo real daIMPACTO. Fueraeje yobjetivopasado no debenindicarrelease_now. NOusar fórmulaocultaenrobot paraelPASS. La prueba independiente futura deCodex no se modifica por ti.
+
+## U02 — Neutralizar entradas al cambiar puesto
+Se reproducen6casos (D,S,SHIFT xARTILLERO/BOMBARDERO) con teclaya físicamentesoltada y2savance: quedan -1/+1inputs causando giro36deg, pitch9.87deg oaceleración16mps. Al abandonarPILOTO neutraliza comandosmanuales latentes, manténmodoautopiloto/manual elegidoyestadodelavión. AlvolverPILOTO pollea tecladovigente, nocarguetrashistórico. PuedeencargarseaQwen cambioacotado player_controls.gd, preservandoH05/H06. Pausa/resetcontractsinregresión. Prueba6casosconeventosInputreales;inputsquedan0sin teclasnuevas. Conservarcabeceo físico estabilizándoserazonablemente no confundirlo con inputaplicado.
+
+## Ejecución y comunicación
+Usarpuenteautorizado `python3 -u /home/test-bench/Documents/B17-project/encargar_qwen.py /home/test-bench/Documents/B17-project/planning/agy-qwen/tarea.json`. Tests `.../tools/godot --headless --path /home/test-bench/Documents/B17-project/godot/B17 --script res://tests/prueba.gd`. HerramientasdearchivosparaJSONylecturas, NOls yNO--verboseantesde--path ni reintentarcommandsdenegados. No modificarpruebas ajenas; conservarversionesprevias. Elpuentecontesta accepted_for_review, noautoaprobaciónfinal.
+Escribe planning/orquestacion/ENTREGA_U01_U02_AGY.md conarchivos, APIs,hashes ytests; actualiza AGY_ESTADO.jsonreal yAGY_AVANCE deorquestacion, logs/agy.log. SiamboscasosQA pasan status awaiting_review, no repetir módulos esperando. Nuevoharnessreconoceeseestado ydeduplica evidencia.
+PrimeroU02 máspequeño; luegoU01. Mantenercandidatorevisable ypruebaslocalespertinentes. No sincorreccionesentregadas y un meroplan. Cuandoestélisto,supervisorreactivarevisiónindependiente/visualydeliveryactualizado.

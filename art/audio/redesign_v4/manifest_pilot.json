@@ -1,0 +1,277 @@
+{
+  "engine_b17_ext_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 20,
+        "output_s": 8.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 128876
+      }
+    ],
+    "technique": "DC-3 radial: ventana 20 s, paso alto65; exterior LP3300 / interior LP1250 y estructura LP210; crossfade200ms",
+    "limitations": "Dos motores DC-3 en despegue desde tierra; aproximación, no B-17 en crucero ni cabina real",
+    "linear_gain": 1.3268896199502531,
+    "gain_db": 2.4566959336964014,
+    "duration_s": 8.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -7.36,
+    "previous_sha256": "caafcc7ffa4c7262def915f9e3f8802911acc42e226c2d464f9e7c1cf97752b4",
+    "final_sha256": "91e7e518f16ed39761d35f44cdabdf8d35396a56f0b17086252b6fddab012791",
+    "changed": true
+  },
+  "engine_b17_int_loop.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 256049,
+        "author": "YleArkisto",
+        "url": "https://freesound.org/people/YleArkisto/sounds/256049/",
+        "license": [
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/256/256049_4415905-hq.mp3"
+        ],
+        "description": "Matkustajakone DC-3 (Dakota). Rullaus kiitoradan päähän, lähtö nousuun, nousu ilmaan, etääntyy.\n\nÄänitetty / Rec: Analoginen nauha, Nagra / Analog tape, Nagra\n\nPaikka/Place: Suomi / Finland / Kouvola, Utti\nAika/Date: 04.04.1978",
+        "original_sha256": "703749630f25e6da1ed5b10fa7e45894cd419f1edc9bc85d6388e5d564e36190",
+        "decoded_sha256": "f7d8fb70478e56f81d15797c21eeb8efa0f0c2d88ba1cba581bda1f76a9446da",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/radial-decoded.wav"
+        ],
+        "title": "Freesound - Lentokone, potkurikone, rullaus, nousu, lähtö / An aeroplane, passenger plane, propeller aircfaft, DC-3, Dakota, taxing, taking off by YleArkisto",
+        "individual_page_sha256": "eb82cf5c4c98bc262bbfcdc649bcd39ed5d2f9c0f93029acaf80ea239f07e01a",
+        "key": "radial"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "radial",
+        "start_s": 20,
+        "output_s": 8.2,
+        "speed": 1,
+        "channel": null
+      },
+      {
+        "operation": "rotate_loop_after_circular_HP30",
+        "samples": 244922
+      }
+    ],
+    "technique": "DC-3 radial: ventana 20 s, paso alto65; exterior LP3300 / interior LP1250 y estructura LP210; crossfade200ms",
+    "limitations": "Dos motores DC-3 en despegue desde tierra; aproximación, no B-17 en crucero ni cabina real",
+    "linear_gain": 1.2544324592685185,
+    "gain_db": 1.9689456628471174,
+    "duration_s": 8.0,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -20.0,
+    "peak_dbfs": -7.85,
+    "previous_sha256": "58b4c3a2bf346b92981f4aa3a193b8911f36fdca7bc23cc019deb7b66c844e54",
+    "final_sha256": "c11a42c5f0c6964b7893141d65f11b348350db01e7256ed8f27a7456eaca1be1",
+    "changed": true
+  },
+  "flak_near_01.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 165808,
+        "author": "sidohzen",
+        "url": "https://freesound.org/people/sidohzen/sounds/165808/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/165/165808_2872744-hq.mp3"
+        ],
+        "description": "This is a demolition of land mines in Camdodia. I was amazed at what great sound fidelity my camcorder gave me. Captured with an onboard mic on my Sony HDR-CX160.",
+        "original_sha256": "295b980f938e6c1140b82fa60eb05c35f8551331d1b1fb58c9b9e87bed3908ac",
+        "decoded_sha256": "b656bde5fb99e2efbe531de3c1fbc5dca1049f27da13bee1fa7a5e44dfa43ce1",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/tnt-decoded.wav"
+        ],
+        "title": "Freesound - Explosion with debris - authentic. 4kg TNT by sidohzen",
+        "individual_page_sha256": "649dfc3171e97ccdc9d852eca7489d8dc768273c8e4bfe2f149ca4a635099840",
+        "key": "tnt"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "tnt",
+        "start_s": 2.170294784580499,
+        "output_s": 1.5,
+        "speed": 1,
+        "channel": 0
+      }
+    ],
+    "technique": "Demolición real TNT: ataque/cola recortados, HP90–100; LP2000–3200 cerca /850–1100 lejos; sin metralla añadida en flak",
+    "limitations": "Explosión terrestre adaptada, no proyectil88mm ni rotura aérea documentada; variantes comparten toma",
+    "linear_gain": 1.1452347542334584,
+    "gain_db": 1.1778903801241318,
+    "duration_s": 1.5,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -15.55,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "612ed1235dbe5560e7004125f5fb91e0628a0c54f67cdfe567bec45a1f90754d",
+    "final_sha256": "d5c99b5718bac44ea86f0310487fc932f07f497258c53241b14e534ddaf9734f",
+    "changed": true
+  },
+  "station_switch.wav": {
+    "kind": "derivado de grabación",
+    "sources": [
+      {
+        "id": 697807,
+        "author": "DustyWind",
+        "url": "https://freesound.org/people/DustyWind/sounds/697807/",
+        "license": [
+          "http://creativecommons.org/publicdomain/zero/1.0/"
+        ],
+        "preview": [
+          "https://cdn.freesound.org/previews/697/697807_7943867-hq.mp3"
+        ],
+        "description": "A click of a metal button in my room",
+        "original_sha256": "7b8fe5ae745e5d311b403289c87839fd9eb227eece936f99bb66ffc7b3edf341",
+        "decoded_sha256": "90049860e743ba447e087dbf7ef06f8ffc2f0f38d0b52f19af54dcc8c16161f2",
+        "original_kind": "HQ MP3 public preview; lossy, not original master",
+        "decode_command": [
+          "gst-launch-1.0",
+          "-q",
+          "filesrc",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-hq.mp3",
+          "!",
+          "decodebin",
+          "!",
+          "audioconvert",
+          "!",
+          "audioresample",
+          "!",
+          "audio/x-raw,format=S16LE,rate=44100,channels=2",
+          "!",
+          "wavenc",
+          "!",
+          "filesink",
+          "location=/home/test-bench/Documents/B17-project/art/audio/redesign_v4/sources/switch-decoded.wav"
+        ],
+        "title": "Freesound - Metal Switch Button Toggle 02.wav by DustyWind",
+        "individual_page_sha256": "fe1419c361d716a0560f85cd4b78f8c7757f279c0f5425c7ed7db116f6f7e361",
+        "key": "switch"
+      }
+    ],
+    "cuts": [
+      {
+        "source": "switch",
+        "start_s": 0.2016780045351474,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 0
+      },
+      {
+        "source": "switch",
+        "start_s": 0.20245532879818592,
+        "output_s": 0.1,
+        "speed": 1,
+        "channel": 1
+      }
+    ],
+    "technique": "Interruptor real recortado; patrones por ritmo y peso, HP160/LP1900–4800; sin oscilador",
+    "limitations": "Señal de accesibilidad, no instrumento histórico documentado",
+    "linear_gain": 2.6707048749099136,
+    "gain_db": 8.53251798296893,
+    "duration_s": 0.25,
+    "channels": 1,
+    "sample_rate": 44100,
+    "bits": 16,
+    "final_processing": "HP30Hz, remove DC, gain-only RMS target capped at -1.2dBFS; no limiter; PCM16 quantization",
+    "rms_dbfs": -24.4,
+    "peak_dbfs": -1.2,
+    "previous_sha256": "12eb0b6e74b5f5f7579e9aafdae55853f5e6f82c7262edb152ee1ce5329850b5",
+    "final_sha256": "35a90c600f00436a40b2b5471e30bfdb1f3e1f2d4a09cdea53c9f5e309025ad5",
+    "changed": true
+  }
+}

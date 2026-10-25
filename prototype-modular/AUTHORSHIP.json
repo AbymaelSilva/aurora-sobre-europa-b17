@@ -1,0 +1,17 @@
+{
+  "game_scripts_primary_author": "qwen2.5-coder:7b-instruct-q4_K_M",
+  "integration_scene_and_tests": "Codex",
+  "main_gd_corrections_by_Codex": [
+    "Replace C-style ternary and nonexistent joypad count with connected joypad IDs",
+    "Implement missing R reset input"
+  ],
+  "hud_gd_corrections_by_Codex": [
+    "Replace boolean expression with GDScript conditional for status text"
+  ],
+  "validated": "parser, 10min simulated flight invariants, headless 120 frames, integration pause/reset/resume if test present",
+  "not_validated": [
+    "Ally X",
+    "Windows",
+    "physical controller"
+  ]
+}

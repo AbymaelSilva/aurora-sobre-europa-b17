@@ -1,0 +1,1 @@
+El supervisor devuelve revisiones1y2: faltan contratos verificables y la segunda afirma aprobación inexistente. Esa afirmación queda RECHAZADA; solo el tablero y log del supervisor acreditan aceptación. Se solicita tercera respuesta estructurada, no código.

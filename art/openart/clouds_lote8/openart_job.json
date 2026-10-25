@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETED",
+  "historyId": "xSTm6sjSshPkw6omuAak",
+  "projectId": "OgiFUoWFMu1oOrtlChxF",
+  "capabilityId": "nano-banana-2-1:text2image",
+  "modelDisplayName": "Nano Banana 2.1",
+  "aspectRatio": "1:1",
+  "prompt": "Production game VFX texture atlas, a precise 4 by 4 arrangement of 16 DIFFERENT isolated photorealistic winter European clouds, square 4096 by 4096 pixels. Each invisible 1024 by 1024 cell contains exactly one fully contained cloud with at least 96 pixels of pure black padding on all four sides. No visible grid lines, borders, labels or text. Row 1: four distinct wispy fragmented stratocumulus; row 2: four medium irregular rounded cumulus humilis; row 3: four wide layered ragged stratocumulus banks; row 4: four thicker complex cumulus with soft broken edges. Photographic cloud microstructure, convincing volume, subtle cool grey blue internal shading and soft ivory scattering, consistent low winter sunlight from upper left across all 16 clouds. Vary silhouettes and internal density substantially; never repeat or mirror the same cloud. Pure uniform RGB black background only, no sky gradient, horizon, ground, aircraft, smoke, fire or stars. Cloud edges dissolve smoothly to black, including wispy semi transparent filaments; avoid dark grey rectangular backplates and halos. These will become separate alpha blended 3D billboards for an aircraft game, viewed at and above cloud altitude, natural aerial photography rather than illustration, cotton balls or stylized video game puffs. Full asset sheet fills image with evenly sized invisible cells; every cloud wholly inside its own cell with no crossing. Output high detail 4K square atlas.",
+  "resolution": "4K",
+  "resources": [
+    {
+      "id": "maETMDBdoJ2FI3kmpFe5",
+      "mediaType": "image",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-10/create-image/pQUrswkx3eFxWVs0XAJm/image_1792888136807_cf9f772b_1792888137196_79a98447.png",
+      "status": "completed",
+      "aspectRatio": "1:1",
+      "thumbnailUrl": "https://cdn.openart.ai/openart/thumbnail/production/2026-10/create-image/pQUrswkx3eFxWVs0XAJm/image_1792888136807_cf9f772b_1792888137978_e9e5fab6.webp",
+      "metadata": {
+        "width": 4096,
+        "height": 4096,
+        "format": "png"
+      }
+    }
+  ]
+}

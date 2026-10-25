@@ -1,0 +1,8 @@
+  caja Meshy=(2.0, 0.414702, 1.43327)  nuestra=(31.62, 6.556447, 22.66)  escala por eje=(15.81, 15.81002, 15.81)
+  AVISO: Meshy movió/escaló el modelo; se alinea con escala 15.81001
+  triángulos Meshy=26842 celdas=7145
+  material: albedo=true normal=true rough=true metal=true ao=false
+  transferencia: 27354 triángulos, exactos=26822 (98.1%), a >5 cm=512, distancia máx=0.0864 m
+  AABB antes=[P: (-15.81, -2.289005, -11.33), S: (31.62, 6.556447, 22.66)] después=[P: (-15.81, -2.289005, -11.33), S: (31.62, 6.556447, 22.66)] dif.rel.máx=0.00000%
+  Rotor antes=["Rotor_0@(-7.729001, -0.637, -7.872)", "Rotor_1@(7.729001, -0.637, -7.872)", "Rotor_2@(-3.801, -0.637, -8.073)", "Rotor_3@(3.801, -0.637, -8.073)"] después=["Rotor_0@(-7.729001, -0.637, -7.872)", "Rotor_1@(7.729001, -0.637, -7.872)", "Rotor_2@(-3.801, -0.637, -8.073)", "Rotor_3@(3.801, -0.637, -8.073)"]
+APPLY OK /tmp/meshy_tools/r2/out/b17g_i3.glb

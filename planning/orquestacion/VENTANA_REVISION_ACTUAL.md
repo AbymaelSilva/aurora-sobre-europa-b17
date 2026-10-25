@@ -1,0 +1,2 @@
+# Revisión visual autorizada por supervisor
+Modelos activos y anclajes: prueba independiente PASSenround-001-1792863979.log. ControlesH05/H06: revisiónCodexPASSconhashesestables20261024T105635. Ahora corresponde capturasGPU del árbol actual con hashesantes/después. No confundir ausencia de markerAGYconprohibición de revisión: esta orden delsupervisorautorizala revisiónincremental. Si cambiaproduccióndurantecapturas, invalidar conjuntoyrepetirsolocuandoestéestable. Agy no debe seguir lanzandocapturasheadless.

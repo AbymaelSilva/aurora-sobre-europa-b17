@@ -1,0 +1,11 @@
+{
+  "qwen_modules": [
+    "bomb_model.gd",
+    "mission_state.gd",
+    "mission_scenery.gd"
+  ],
+  "integration_and_tests": "Codex",
+  "model": "qwen2.5-coder:7b-instruct-q4_K_M",
+  "tests": "/home/test-bench/Documents/B17-project/logs/mission/20261024T084147Z/mission-tests.txt",
+  "controller_work": "deferred by user"
+}

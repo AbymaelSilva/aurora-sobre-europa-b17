@@ -1,0 +1,11 @@
+{
+  "qwen_modules": [
+    "damage_model.gd",
+    "flak_model.gd",
+    "formation.gd",
+    "flak_visual.gd"
+  ],
+  "integration_and_tests": "Codex",
+  "controls": "unchanged/deferred",
+  "tests": "/home/test-bench/Documents/B17-project/logs/combat/20261024T084605Z/combat-tests.txt"
+}
